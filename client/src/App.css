@@ -1,0 +1,278 @@
+/* CSS IMPORTS */
+@import url("./assets/styles/base/base.css");
+@import url("./assets/styles/base/reset.css");
+
+@import url("./assets/styles/abstracts/variables.css");
+@import url("./assets/styles/components/modal.css");
+@import url("./assets/styles/components/header.css");
+@import url("./assets/styles/components/menu.css");
+@import url("./assets/styles/components/courses.css");
+@import url("./assets/styles/components/projects.css");
+@import url("./assets/styles/components/services.css");
+@import url("./assets/styles/components/footer.css");
+
+*{
+  margin: 0;
+  padding: 0;
+  
+  box-sizing: border-box;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.body-container {
+  background-color: var(--main-bg-color);
+}
+
+/* MENU */ 
+.menu-scroll {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  transition: 0.1s ease-in-out;
+}
+
+.btn, .btn-no {
+  text-align: center;
+  z-index: 0;
+  width: 50%;
+  padding: 10px;
+  color: var(--main-bg-color);
+  background-color: var(--pink-color);
+  border: none;
+  border-radius: 10px;
+}
+
+.btn-no {
+  filter: grayscale(90%);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (min-width: 600px) and (max-width: 1400px) {
+  /* MENU */
+  .menu {
+    flex-direction: row;
+  }
+  .menu-logo {
+    height: 100%;
+  }
+  .menu-li {
+    padding: 15px;
+  }
+
+  /* HEADER */
+  .header-img {
+    width: 25%;
+  }
+  .header-intro {
+    width: 60%;
+  }
+  .header-intro h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  .header-intro p {
+    font-size: 1rem;
+  }
+  .header-btn-container {
+    flex-direction: row;
+  }
+
+  /* COURSES */
+  .course-info h2 {
+    font-size: 4rem;
+    margin-top: 0;
+  }
+  .course-box-container {
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .course-box h3 {
+    font-size: 1rem;
+  }
+  .course-box button {
+    width: 80%;
+  }
+
+  /* PROJECTS */
+  .projects > h2 {
+    font-size: 4rem;
+  }
+  .projects-box {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .categories {
+    width: 80%;
+    margin: auto;
+  }
+
+  /* SERVICES */
+  .services-container {
+    margin-top: 15%;
+    flex-direction: row;
+  }
+  .services-container h2 {
+    font-size: 4rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2%;
+  }
+  .services h2 {
+    margin-top: 0;
+  }
+
+  /* MODAL */
+  .modal-container {
+    width: 60%;
+  }
+  .modal-container .modal-bar {
+    flex-direction: row;
+  }
+
+  .footer-container h2, h3 {
+    font-size: 1rem; 
+  }
+}
+
+
+@media (min-width: 1400px) {
+  /* MENU */
+  .menu {
+    flex-direction: row;
+  }
+  .menu-logo {
+    height: 100%;
+  }
+  .menu-li {
+    padding: 15px;
+  }
+  .menu-social-media {
+    display: flex;
+    width: 3%;
+  }
+
+  /* HEADER */
+  .header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .header-img {
+    width: 25%;
+  }
+  .header-intro {
+    width: 40%;
+  }
+  .header-intro h1 {
+    font-size: 7rem;
+  }
+  .header-intro p {
+    font-size: 1rem;
+  }
+  .header-btn-container {
+    flex-direction: row;
+  }
+
+  .btn {
+    width: 50% !important;
+    padding: 20px;
+    margin-bottom: 0%;
+  }
+
+  /* COURSES */
+  .course-info h2 {
+    font-size: 5rem;
+    margin-top: 0;
+  }
+  #courses-avatar {
+    display: flex;
+  }
+  #courses-avatar img {
+    display: block;
+  }
+  .course-box-container {
+    width: 60%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .course-box h3 {
+    font-size: 1rem;
+  }
+  .course-box button {
+    width: 100%;
+  }
+
+  /* PROJECTS */
+  .projects > h2 {
+    font-size: 5rem;
+  }
+  .projects-box {
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
+  .categories {
+    width: 80%;
+    margin: auto;
+  }
+  .categories button {
+    padding: 20px;
+    border-radius: 20px;
+    margin-right: 2%;
+  }
+
+  /* SERVICES */
+  .services-container {
+    margin-top: 15%;
+    flex-direction: row;
+  }
+  .services-container h2 {
+    font-size: 5rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2%;
+  }
+  .services h2 {
+    margin-top: 0;
+  }
+  .services-container .services-avatar {
+    display: block;
+    transform: translateY(30%);
+    z-index: -1;
+    width: 100%;
+  }
+
+  /* MODAL */
+  .modal-container {
+    width: 40%;
+  }
+  .modal-container .modal-bar {
+    flex-direction: row;
+  }
+
+  /* CONTACT */
+  .contact form {
+    width: 60%;
+  }
+  .contact button {
+    width: 40%;
+  }
+
+  .footer-container h2, h3 {
+    font-size: 1rem; 
+  }
+  .contact h2 {
+    font-size: 5rem;
+  }
+  #contact-avatar {
+    display: block;
+  }
+}

@@ -1,0 +1,75 @@
+
+.contact {
+    z-index: 1;
+    background-color: var(--pink-color);
+    position: relative;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  #contact-avatar {
+    position: absolute;
+    bottom: 0%;
+    left: -15%;
+    transform: rotateY(-180deg);
+  }
+
+  .contact-input{
+    padding: 20px;
+    margin-bottom: 2rem;
+  }
+  
+  .contact h2 {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 15%);
+  }
+  
+  .contact form {
+    z-index: 2;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact form textarea,
+  input {
+    width: 100%;
+    margin-bottom: 4%;
+    font-family: inherit;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+    color: var(--main-bg-color);
+    background-color: rgba(255, 255, 255, 20%);
+  }
+  
+  .contact form input::placeholder {
+    color: var(--main-bg-color);
+  }
+  
+  .contact form textarea {
+    height: 400px;
+    resize: none;
+  }
+  
+  .contact form textarea::placeholder {
+    color: var(--main-bg-color);
+  }
+  
+  .contact .contact-btn {
+    border: none;
+    width: 60%;
+    padding: 20px;
+    background-color: var(--main-bg-color);
+    color: var(--pink-color);
+    border-radius: 10px;
+    cursor: pointer;
+  }
