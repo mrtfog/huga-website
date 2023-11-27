@@ -19,7 +19,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="contact" id ="Contacto">
+    <section className="contact" id ="Contacto">
       <img id = "contact-avatar" src = {avatar} alt = {"avatar"} />
       <h2>Contacto</h2>
       <form onSubmit={sendMessage}>
@@ -28,7 +28,7 @@ const Contact = () => {
         <ContactInput name = "message" type="textArea" placeholder="Tu mensaje"></ContactInput>
         <input className = 'contact-btn' type = "submit" value = "Enviar mensaje"></input>
       </form>
-    </div>
+    </section>
   );
 }
 
