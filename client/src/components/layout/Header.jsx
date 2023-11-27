@@ -9,15 +9,15 @@ const Header = () => {
   return (
     <header className="header" id = "Inicio">
       <div className="header-intro">
-        <h1>
-          Hola <br />
+        <h1 className="leading-none">
+          Hola <span className="block" />
           <span>soy Anto!</span>
         </h1>
-        <p>
+        <p className="mt-8">
           Soy diseñadora gráfica y de indumentaria recibida en la Universidad de
           Buenos Aires. Me especializo en ilustración y fotografía,
           conceptualización y comunicación.
-          <br />
+          <span className="block" />
           Contame tu idea y hagámosla realidad!
         </p>
         <div className="header-btn-container">
