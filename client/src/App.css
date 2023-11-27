@@ -11,18 +11,6 @@
 @import url("./assets/styles/components/services.css");
 @import url("./assets/styles/components/footer.css");
 
-*{
-  margin: 0;
-  padding: 0;
-  
-  box-sizing: border-box;
-  
-}
-
-a {
-  text-decoration: none;
-}
-
 body {
   overflow-x: hidden;
 }
@@ -192,6 +180,7 @@ body {
   .course-info h2 {
     font-size: 5rem;
     margin-top: 0;
+    font-weight: 600;
   }
   #courses-avatar {
     display: flex;
@@ -213,6 +202,7 @@ body {
   /* PROJECTS */
   .projects > h2 {
     font-size: 5rem;
+    font-weight: 600;
   }
   .projects-box {
     grid-template-columns: repeat(4, 1fr);
@@ -242,6 +232,7 @@ body {
   }
   .services h2 {
     margin-top: 0;
+    font-weight: 600;
   }
   .services-container .services-avatar {
     display: block;
@@ -271,6 +262,7 @@ body {
   }
   .contact h2 {
     font-size: 5rem;
+    font-weight: 600;
   }
   #contact-avatar {
     display: block;
