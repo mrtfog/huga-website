@@ -23,7 +23,11 @@ export const ModalCourses = ({ data: { title, description, price, topics, id, ur
         <p>{topics}</p>
         <h3>Precio: {price}</h3>
         {
-        (available) ? <a href = { url } className="btn">Comprar</a> : <a href = '#' className="btn-no">No disponible</a> 
+          available ? (
+              <a href = { url } className="btn">Comprar</a>
+            ) : (
+              <a href = '#' className="btn-no">No disponible</a>
+            )
         } 
       </div>
     </div>
