@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <div className="contact" id ="Contacto">
       <img id = "contact-avatar" src = {avatar} alt = {"avatar"} />
-      <h2>Contact</h2>
+      <h2>Contacto</h2>
       <form onSubmit={sendMessage}>
         <ContactInput name = "name" type="text" placeholder="Tu nombre"></ContactInput>
         <ContactInput name = "email" type="email" placeholder="Tu email"></ContactInput>

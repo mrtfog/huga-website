@@ -26,7 +26,8 @@
   
   .contact h2 {
     font-size: 4rem;
-    color: rgba(255, 255, 255, 15%);
+    color: var(--main-bg-color);
+    padding-bottom: 30px;
   }
   
   .contact form {

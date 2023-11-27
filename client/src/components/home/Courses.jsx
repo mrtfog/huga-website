@@ -33,7 +33,7 @@ const Courses = () => {
           <div className="course-info">
             <h2>
               Visitá <br />
-              <span>mis cursos!</span>
+              mis cursos!
             </h2>
             <div className="course-box-container">
             {coursesData.map((course) => {
