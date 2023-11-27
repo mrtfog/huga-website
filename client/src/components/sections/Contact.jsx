@@ -20,7 +20,7 @@ export function Contact() {
 
   return (
     <div className="contact" id = "Contacto">
-      <img id = "contact-avatar" src = {avatar} alt = {avatar} />
+      <img id = "contact-avatar" src = {avatar} alt = {"avatar"} />
       <h2>Contact</h2>
       <form onSubmit={sendMessage}>
         <ContactInput name = "name" type="text" placeholder="Tu nombre"></ContactInput>

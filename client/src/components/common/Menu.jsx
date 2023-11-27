@@ -9,15 +9,17 @@ export function Menu(props) {
   return (
     <>
       <div className="menu" id = "menu">
-        <img className="menu-logo" src={logo} alt = {logo}></img>
-        <nav className="menu-nav">
-          {props.menuItems.map((item) => {
-            return (
-              <li className="menu-li" key={item}>
-                <Link to={item} spy={true} smooth={true} offset={-50} duration={700}>{item}</Link>
-              </li>
-            );
-          })}
+        <img className="menu-logo" src={logo} alt = {"menu logo"}></img>
+        <nav>
+          <ul className="menu-nav">
+            {props.menuItems.map((item) => {
+              return (
+                <li className="menu-li" key={item}>
+                  <Link href="#" to={item} spy={true} smooth={true} offset={-50} duration={700}>{item}</Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
       </div>
       <div className="menu-social-media">

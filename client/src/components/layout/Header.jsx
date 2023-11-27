@@ -16,18 +16,19 @@ const Header = () => {
         <p>
           Soy diseñadora gráfica y de indumentaria recibida en la Universidad de
           Buenos Aires. Me especializo en ilustración y fotografía,
-          conceptualización y comunicación. Contame tu idea y hagámosla
-          realidad!
+          conceptualización y comunicación.
+          <br />
+          Contame tu idea y hagámosla realidad!
         </p>
         <div className="header-btn-container">
-          <Link className = 'btn' to='Contacto' spy={true} smooth={true} offset={-50} duration={500}>Trabajemos</Link>
+          <Link className = 'btn' href="#" to='Contacto' spy={true} smooth={true} offset={-50} duration={500}>Trabajemos</Link>
           <a href = {cv} className= 'btn'>Mirar CV ➜</a>
         </div>
       </div>
       <div className="header-img">
         <img className="personal-img" src={personalAvatar} alt = {personalAvatar}></img>
       </div>
-      <Link to='Cursos' spy={true} smooth={true} offset={-50} duration={500} className="bottom-panel"><IoChevronDown/></Link>
+      <Link to='Cursos' href="#" spy={true} smooth={true} offset={-50} duration={500} className="bottom-panel"><IoChevronDown/></Link>
     </header>
   );
 }

@@ -29,7 +29,7 @@ const Courses = () => {
           ></path>
         </svg>
         <div className="course-container">
-          <div id = "courses-avatar"><img src={coursesAvatar} alt = {coursesAvatar}></img></div>
+          <div id = "courses-avatar"><img src={coursesAvatar} alt = {"courses-avatar"}></img></div>
           <div className="course-info">
             <h2>
               Visitá <br />

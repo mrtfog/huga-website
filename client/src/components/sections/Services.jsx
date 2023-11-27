@@ -17,11 +17,11 @@ const Services = () => {
           <h2>Servicios</h2>
           <div className="services-grid">
             {serviceLinks.map((service, i) => {
-              return <a key = {i} href = {service.url}><img src={service.image} alt = {service.image}></img></a>;
+              return <a key = {i} href = {service.url}><img src={service.image} alt = {"service image"}></img></a>;
             })}
           </div>
         </div>
-        <img className = 'services-avatar' src={servicesAvatar} alt = {servicesAvatar}></img>
+        <img className = 'services-avatar' src={servicesAvatar} alt = {"service avatar"}></img>
       </div>
     </div>
   );
