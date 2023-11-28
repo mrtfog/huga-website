@@ -72,6 +72,7 @@
 }
 
 .course-box {
+  overflow: hidden;
   padding-bottom: 1rem;
   height: 100%;
   background-color: rgba(238, 238, 238, 0.7);
@@ -84,8 +85,19 @@
   transition: 0.2s ease-in-out all;
 }
 
+.course-box:hover{
+  transform: scale(1.05);
+}
+
+.course-box img{
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .course-box-info {
   width: 100%;
+  height: 50%;
   margin-top: 5%;
   display: flex;
   flex-direction: column;
@@ -97,12 +109,6 @@
   width: 100%;
   font-size: 0.8rem;
   text-align: center;
-}
-
-.course-box img {
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
 }
 
 .course-box h3 {
