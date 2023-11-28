@@ -23,6 +23,12 @@ export default defineConfig({
               S,
               context,
             }),
+            orderableDocumentListDeskItem({
+              type: 'home',
+              title: '📄 Home',
+              S,
+              context,
+            }),
           ])
       },
     }),
