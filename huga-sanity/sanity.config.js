@@ -18,14 +18,32 @@ export default defineConfig({
           .title('Páginas')
           .items([
             orderableDocumentListDeskItem({
+              type: 'home',
+              title: '📄 Home',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
               type: 'socialMedia',
               title: '⚙️ Redes Sociales',
               S,
               context,
             }),
             orderableDocumentListDeskItem({
-              type: 'home',
-              title: '📄 Home',
+              type: 'portfolio',
+              title: '⚙️ Portafolio',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'services',
+              title: '⚙️ Servicios',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'courses',
+              title: '⚙️ Cursos',
               S,
               context,
             }),

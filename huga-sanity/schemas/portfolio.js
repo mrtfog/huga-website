@@ -1,37 +1,39 @@
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
-// --- MEDIA TYPES ---
-const FACEBOOK = 'facebook'
-const INSTAGRAM = 'instagram'
-const YOUTUBE = 'youtube'
-const LINKEDIN = 'linkedin'
-const BEHANCE = 'behance'
-const WHATSAPP = 'whatsapp'
+const FIGURINES = 'figurines'
+const ESTAMPAS = 'estampas'
+const ILUSTRACIONES = 'ilustraciones'
+const FICHASTECNICAS = 'fichas-tecnicas'
 
 export default {
-  name: 'socialMedia',
-  title: 'Redes Sociales',
+  name: 'portfolio',
+  title: 'Portafolio',
   type: 'document',
   orderings: [orderRankOrdering],
   fields: [
-    orderRankField({type: 'socialMedia'}),
+    orderRankField({type: 'portfolio'}),
     {
       name: 'socialMedia',
       title: 'Red social',
       type: 'string',
       options: {
-        list: [FACEBOOK, INSTAGRAM, YOUTUBE, LINKEDIN, BEHANCE, WHATSAPP],
+        list: [FIGURINES, ESTAMPAS, ILUSTRACIONES, FICHASTECNICAS],
       },
     },
     {
-      name: 'mediaUrl',
-      title: 'Media URL',
+      name: 'title',
+      title: 'Título',
       type: 'string',
+    },
+    {
+      name: 'image',
+      title: 'Imágen',
+      type: 'image',
     },
   ],
   preview: {
     select: {
-      title: 'socialMedia',
+      title: 'title',
     },
     prepare({title}) {
       return {
