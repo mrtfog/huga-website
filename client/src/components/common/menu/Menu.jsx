@@ -1,11 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import logo from "../../assets/img/logo.png";
+import logo from "../../../assets/img/logo.png";
 import { Link } from "react-scroll";
-import { socialMedias } from "../../assets/img/SVG";
+import { socialMedias } from "../../../assets/img/SVG";
 import { MenuIcon } from "./MenuIcon";
 
-export function Menu(props) {
+function Menu(props) {
   return (
     <>
       <div className="menu" id = "menu">
@@ -32,3 +31,5 @@ export function Menu(props) {
     </>
   );
 }
+
+export default Menu

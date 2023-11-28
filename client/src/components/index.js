@@ -1,3 +1,5 @@
+export { default as Menu } from "./common/menu/Menu.jsx";
+
 export { default as Contact } from "./home/Contact.jsx";
 export { default as Courses } from "./home/Courses.jsx";
 export { default as Projects } from "./home/Projects.jsx";

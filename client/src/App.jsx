@@ -1,6 +1,6 @@
 import "./App.css"
 import "./helpers";
-import { Menu } from "./components/common/Menu"
+import { Menu } from "./components";
 import { Home } from "./containers";
 
 const menuItems = ["Inicio", "Cursos", "Proyectos", "Servicios" , "Contacto"];
