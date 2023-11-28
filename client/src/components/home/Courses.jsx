@@ -2,7 +2,7 @@ import React from "react";
 import { CourseBox } from "../common/CourseBox.jsx";
 import coursesAvatar from "../../assets/img/avatars/courses.png";
 import { ModalCourses } from "../common/ModalCourses.jsx";
-import { coursesData } from "../../constants/courses.js";
+import { coursesData } from "../../constants";
 
 //This function will create modals windows about the differents courses.
 const showModalCourse = (event) => {

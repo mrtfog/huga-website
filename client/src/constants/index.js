@@ -1,7 +1,7 @@
 import { courses } from "../assets/img/courses/index";
 const [img1, img2, img3, img4, img5, img6] = courses;
 
-const coursesData = [
+export const coursesData = [
   {
     id: 1,
     title: "Curso de Figurin Digital Inicial",
@@ -186,4 +186,168 @@ const coursesData = [
     available: true,
   },
 ];
-export { coursesData };
+
+export const PORTFOLIO = [
+  {
+    id: 1,
+    category: "Figurines",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4323b6152674625.63220f6a0a50a.jpg",
+  },
+  {
+    id: 2,
+    category: "Figurines",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/fcc599144270395.628979d349785.jpg",
+  },
+  {
+    id: 3,
+    category: "Figurines",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/c36e26144270357.62897981f3220.jpg",
+  },
+  {
+    id: 4,
+    category: "Figurines",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/49af4c144577253.628ea09942033.png",
+  },
+  {
+    id: 5,
+    category: "Figurines",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9eb46e144577629.628ea24dc06c3.png",
+  },
+  {
+    id: 6,
+    category: "Figurines",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b47a8f155797553.635b118ce817d.png",
+  },
+  {
+    id: 7,
+    category: "Ilustraciones",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c43a8b154261407.633ec646ab3a7.png",
+  },
+  {
+    id: 8,
+    category: "Ilustraciones",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aceb72154261407.633ec646a9284.png",
+  },
+  {
+    id: 9,
+    category: "Ilustraciones",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8b1279154261261.633ec5b7d32ff.jpg",
+  },
+  {
+    id: 10,
+    category: "Ilustraciones",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/5da5e6139801743.6236183a98525.jpg",
+  },
+  {
+    id: 11,
+    category: "Ilustraciones",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/df981f152676631.632215229269e.jpg",
+  },
+  {
+    id: 12,
+    category: "Ilustraciones",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/e80bbb156619509.636a692b3555f.jpg",
+  },
+  {
+    id: 13,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/3a2282139697333.6233edaec33d7.jpg",
+  },
+  {
+    id: 14,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/31464f139758221.62350a461e8f3.jpg",
+  },
+  {
+    id: 15,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/cf82d3152674325.63220e824a273.jpg",
+  },
+  {
+    id: 16,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/0c944f139697193.6233eccbe7084.jpg",
+  },
+  {
+    id: 17,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/b10c8e139696837.6233ea32de6a4.jpg",
+  },
+  {
+    id: 18,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/34b085157990763.63839deca2a63.jpg",
+  },
+  {
+    id: 19,
+    category: "Estampas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/03dcab157991597.6383a1aa54e3a.jpg",
+  },
+  {
+    id: 20,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/4b2242144274049.6289a29701b16.jpg",
+  },
+  {
+    id: 21,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/b3b9b5144274049.6289a297012b8.jpg",
+  },
+  {
+    id: 22,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/1c2757144274049.63724e15c622e.jpg",
+  },
+  {
+    id: 23,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/07e1a1144274049.63724e15c6f47.jpg",
+  },
+  {
+    id: 24,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/51f899144274049.628b91d1574cd.jpg",
+  },
+  {
+    id: 25,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/bdfbc9144274049.63724e15c8994.jpg",
+  },
+  {
+    id: 26,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5882e1144274049.63724e15c7de6.jpg",
+  },
+  {
+    id: 27,
+    category: "Fichas tecnicas",
+    imageUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9ece67144274049.63724e15c967a.jpg",
+  },
+];

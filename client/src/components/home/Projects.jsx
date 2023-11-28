@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProjectItem } from "../common/ProjectItem";
+import { PORTFOLIO } from "../../constants";
 
 const Projects = ()  => {
   const categories = [
@@ -12,15 +13,13 @@ const Projects = ()  => {
 
   async function requestDataProjects(event = null) {
     try {
-      const request = await fetch("DB/projects.json");
-      const responseJson = await request.json();
       if (event != null) {
-        const responseCategory = responseJson.filter(
+        const responseCategory = PORTFOLIO.filter(
           (project) => project.category == event.target.id
         );
         setData(responseCategory);
       } else {
-        setData(responseJson.splice(1, 12));
+        setData(PORTFOLIO.splice(1, 12));
       }
     } catch (err) {
       console.log(err);
