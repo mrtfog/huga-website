@@ -1,6 +1,5 @@
-import React from "react";
 import { ContactInput } from "../common/ContactInput";
-import avatar from '../../assets/img/avatars/contacto.png';
+import { ContactAvatar } from "../../constants/images";
 import emailjs from '@emailjs/browser';
 import "../../assets/styles/components/contact.css"
 
@@ -20,7 +19,7 @@ const Contact = () => {
 
   return (
     <section className="contact" id ="Contacto">
-      <img id = "contact-avatar" src = {avatar} alt = {"avatar"} />
+      <img id = "contact-avatar" src = {ContactAvatar} alt = {"avatar"} />
       <h2>Contacto</h2>
       <form onSubmit={sendMessage}>
         <ContactInput name = "name" type="text" placeholder="Tu nombre"></ContactInput>

@@ -1,6 +1,5 @@
-import React from "react";
 import { serviceLinks } from "../../assets/img/services/index"
-import servicesAvatar from "../../assets/img/avatars/servicios.png";
+import { ServicesAvatar } from "../../constants/images"
 
 const Services = () => {
   return (
@@ -21,7 +20,7 @@ const Services = () => {
             })}
           </div>
         </div>
-        <img className = 'services-avatar' src={servicesAvatar} alt = {"service avatar"}></img>
+        <img className = 'services-avatar' src={ServicesAvatar} alt = {"service avatar"}></img>
       </div>
     </section>
   );

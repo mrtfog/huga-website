@@ -1,6 +1,5 @@
-import React from "react";
 import { CourseBox } from "../common/CourseBox.jsx";
-import coursesAvatar from "../../assets/img/avatars/courses.png";
+import { CoursesAvatar } from "../../constants/images.js";
 import { ModalCourses } from "../common/ModalCourses.jsx";
 import { coursesData } from "../../constants";
 
@@ -29,7 +28,7 @@ const Courses = () => {
           ></path>
         </svg>
         <div className="course-container">
-          <div id = "courses-avatar"><img src={coursesAvatar} alt = {"courses-avatar"}></img></div>
+          <div id = "courses-avatar"><img src={CoursesAvatar} alt = {"courses-avatar"}></img></div>
           <div className="course-info">
             <h2>
               Visitá <br />

@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-scroll";
 import cv from '../../assets/docs/cv.pdf';
-import personalAvatar from "../../assets/img/avatars/personal.png";
+import { PersonalAvatar } from "../../constants/images";
 import { IoChevronDown } from "react-icons/io5";
 import { motion } from "framer-motion"
 
@@ -81,7 +80,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header-img">
-        <img className="personal-img" src={personalAvatar} alt = {personalAvatar}></img>
+        <img className="personal-img" src={PersonalAvatar} alt ={"Avatar"}></img>
       </div>
       <Link to='Cursos' href="#" spy={true} smooth={true} offset={-50} duration={500} className="bottom-panel"><IoChevronDown/></Link>
     </header>
