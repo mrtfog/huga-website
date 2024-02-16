@@ -1,9 +1,9 @@
 import { Menu, NotFound, ServerError, InitialTransition } from "./components";
-import { useSanity } from "./hooks/useSanity";
+import { useSanity } from "./lib/useSanity";
 import { Home, Courses, Services } from "./containers";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import "./helpers";
+import "./lib/helpers";
 import { AnimatePresence } from "framer-motion";
 
 const menuItems = ["Inicio", "Cursos", "Proyectos", "Servicios", "Contacto"];

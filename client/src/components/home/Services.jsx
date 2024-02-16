@@ -1,9 +1,9 @@
-import { serviceLinks } from "../../assets/img/services/index"
-import { ServicesAvatar } from "../../constants/images"
+import { serviceLinks } from "../../assets/img/services/index";
+import { ServicesAvatar } from "../../lib/images";
 
 const Services = () => {
   return (
-    <section className="services" id = "Servicios">
+    <section className="services" id="Servicios">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#AB7994"
@@ -16,14 +16,22 @@ const Services = () => {
           <h2>Servicios</h2>
           <div className="services-grid">
             {serviceLinks.map((service, i) => {
-              return <a key = {i} href = {service.url}><img src={service.image} alt = {"service image"}></img></a>;
+              return (
+                <a key={i} href={service.url}>
+                  <img src={service.image} alt={"service image"}></img>
+                </a>
+              );
             })}
           </div>
         </div>
-        <img className = 'services-avatar' src={ServicesAvatar} alt = {"service avatar"}></img>
+        <img
+          className="services-avatar"
+          src={ServicesAvatar}
+          alt={"service avatar"}
+        ></img>
       </div>
     </section>
   );
 };
 
-export default Services
+export default Services;
