@@ -7,7 +7,7 @@ import {
   Contact
 } from '../../components'
 import { useEffect } from 'react';
-import { useSanity } from "../../hooks/useSanity"
+import {useSanity} from "../../lib/useSanity";
 
 const Home = () => {
 

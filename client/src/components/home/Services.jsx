@@ -1,5 +1,5 @@
 import { serviceLinks } from "../../assets/img/services/index"
-import { ServicesAvatar } from "../../constants/images"
+import { ServicesAvatar } from "../../lib/images"
 import { motion } from "framer-motion";
 
 const Services = () => {
