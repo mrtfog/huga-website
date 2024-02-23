@@ -1,11 +1,10 @@
 import { Link } from "react-scroll";
-import cv from '../../assets/docs/cv.pdf';
-import { PersonalAvatar } from "../../constants/images";
+import cv from "../../assets/docs/cv.pdf";
+import { PersonalAvatar } from "../../lib/images";
 import { IoChevronDown } from "react-icons/io5";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const Header = () => {
-
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -37,53 +36,66 @@ const Header = () => {
     },
   };
 
-
   return (
-    <header className="header" id = "Inicio">
-      <div 
-      className="header-intro"
-      >
+    <header className="header" id="Inicio">
+      <div className="header-intro">
         <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="overflow-hidden"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="overflow-hidden"
         >
-          <motion.h1 
-          variants={child}
-          className="leading-none"
-          >
+          <motion.h1 variants={child} className="leading-none">
             Hola <span className="block" />
             <span>soy Anto!</span>
           </motion.h1>
         </motion.div>
         <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="overflow-hidden"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="overflow-hidden"
         >
-          <motion.p 
-          className="mt-8"
-          variants={child}
-          >
-            Soy diseñadora gráfica y de indumentaria recibida en la Universidad de
-            Buenos Aires. Me especializo en ilustración y fotografía,
+          <motion.p className="mt-8" variants={child}>
+            Soy diseñadora gráfica y de indumentaria recibida en la Universidad
+            de Buenos Aires. Me especializo en ilustración y fotografía,
             conceptualización y comunicación.
             <span className="block" />
             Contame tu idea y hagámosla realidad!
           </motion.p>
         </motion.div>
         <div className="header-btn-container">
-          <Link className = 'btn' href="#" to='Contacto' spy={true} smooth={true} offset={-50} duration={500}>Trabajemos</Link>
-          <a href = {cv} className= 'btn'>Mirar CV ➜</a>
+          <Link
+            className="btn"
+            href="#"
+            to="Contacto"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            Trabajemos
+          </Link>
+          <a href={cv} className="btn">
+            Mirar CV ➜
+          </a>
         </div>
       </div>
       <div className="header-img">
-        <img className="personal-img" src={PersonalAvatar} alt ={"Avatar"}></img>
+        <img className="personal-img" src={PersonalAvatar} alt={"Avatar"}></img>
       </div>
-      <Link to='Cursos' href="#" spy={true} smooth={true} offset={-50} duration={500} className="bottom-panel"><IoChevronDown/></Link>
+      <Link
+        to="Cursos"
+        href="#"
+        spy={true}
+        smooth={true}
+        offset={-50}
+        duration={500}
+        className="bottom-panel"
+      >
+        <IoChevronDown />
+      </Link>
     </header>
   );
-}
-export default Header
+};
+export default Header;

@@ -1,9 +1,8 @@
 import { CourseBox } from "../common/CourseBox.jsx";
-import { CoursesAvatar } from "../../constants/images.js";
+import { CoursesAvatar } from "../../lib/images.js";
 import { ModalCourses } from "../common/ModalCourses.jsx";
-import { coursesData } from "../../constants";
+import { coursesData } from "../../lib/constants.js";
 
-//This function will create modals windows about the differents courses.
 const showModalCourse = (event) => {
   const modalCourse = document.getElementById(event.target.name);
   modalCourse.classList.toggle("enabled");
@@ -18,8 +17,7 @@ const Courses = () => {
           return <ModalCourses id={course.id} data={course} key={course.id} />;
         })
       }
-      <section className="courses" id = "Cursos">
-      
+      <section className="courses" id="Cursos">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#D57C8C"
@@ -28,32 +26,33 @@ const Courses = () => {
           ></path>
         </svg>
         <div className="course-container">
-          <div id = "courses-avatar"><img src={CoursesAvatar} alt = {"courses-avatar"}></img></div>
+          <div id="courses-avatar">
+            <img src={CoursesAvatar} alt={"courses-avatar"}></img>
+          </div>
           <div className="course-info">
             <h2>
               Visitá <br />
               mis cursos!
             </h2>
             <div className="course-box-container">
-            {coursesData.map((course, index) => {
-              return (
-                <CourseBox
-                  key = {course.id}
-                  courseId={course.id}
-                  modal={showModalCourse}
-                  courseName={course.title}
-                  image={course.image}
-                  url={course.url}
-                  delay={index * 0.1}
-                ></CourseBox>
-              );
-            })}
-          </div>
+              {coursesData.map((course) => {
+                return (
+                  <CourseBox
+                    key={course.id}
+                    courseId={course.id}
+                    modal={showModalCourse}
+      s              courseName={course.title}
+                    image={course.image}
+                    url={course.url}
+                  ></CourseBox>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
     </>
   );
-}
+};
 
-export default Courses
+export default Courses;

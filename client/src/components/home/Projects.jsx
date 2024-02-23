@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ProjectItem } from "../common/ProjectItem";
-import { PORTFOLIO } from "../../constants";
+import { PORTFOLIO } from "../../lib/constants";
 
-const Projects = ()  => {
+const Projects = () => {
   const categories = [
     "Figurines",
     "Estampas",
@@ -31,8 +31,7 @@ const Projects = ()  => {
   }, []);
 
   return (
-  
-    <section className="projects" id = "Proyectos">
+    <section className="projects" id="Proyectos">
       <h2>
         <span>Conocé mis</span> proyectos!
       </h2>
@@ -53,13 +52,12 @@ const Projects = ()  => {
         </div>
         <div className="projects-box">
           {data.map((child) => {
-            return <ProjectItem data={child} key = {child.id}/>;
+            return <ProjectItem data={child} key={child.id} />;
           })}
         </div>
       </div>
     </section>
-    
   );
-}
+};
 
-export default Projects
+export default Projects;

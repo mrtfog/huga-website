@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
-    "@sanity/client": "^6.9.0",
+    "@emailjs/browser": "3.11.0",
+    "@sanity/client": "6.9.0",
     "framer-motion": "10.16.5",
     "localforage": "1.10.0",
     "match-sorter": "6.3.1",

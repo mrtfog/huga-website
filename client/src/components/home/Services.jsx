@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Services = () => {
   return (
-    <section className="services" id = "Servicios">
+    <section className="services" id="Servicios">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#AB7994"
@@ -29,10 +29,14 @@ const Services = () => {
             })}
           </div>
         </div>
-        <img className = 'services-avatar' src={ServicesAvatar} alt = {"service avatar"}></img>
+        <img
+          className="services-avatar"
+          src={ServicesAvatar}
+          alt={"service avatar"}
+        ></img>
       </div>
     </section>
   );
 };
 
-export default Services
+export default Services;

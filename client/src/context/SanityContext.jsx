@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState, useEffect } from "react";
 import { client } from "../api/SanityClient";
 
 export const SanityContext = React.createContext();
@@ -20,26 +20,30 @@ export const SanityProvider = ({ children }) => {
       } | order(orderRank)`;
       const result = await client.fetch(query);
 
-      if(result) {
+      if (result) {
         setHomeContent(result);
         setIsLoading(false);
         setFetchError(false);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
       setIsLoading(false);
       setFetchError(true);
     }
-  }
+  };
+
+  useEffect(() => {
+    getHome();
+  }, []);
 
   const value = {
     isLoading,
     fetchError,
     homeContent,
     getHome,
-  }
+  };
 
   return (
     <SanityContext.Provider value={value}>{children}</SanityContext.Provider>
-  )
-}
+  );
+};
