@@ -1,5 +1,6 @@
 import { serviceLinks } from "../../assets/img/services/index"
 import { ServicesAvatar } from "../../constants/images"
+import { motion } from "framer-motion";
 
 const Services = () => {
   return (
@@ -16,7 +17,15 @@ const Services = () => {
           <h2>Servicios</h2>
           <div className="services-grid">
             {serviceLinks.map((service, i) => {
-              return <a key = {i} href = {service.url}><img src={service.image} alt = {"service image"}></img></a>;
+              return <motion.a 
+              key = {i} 
+              href = {service.url}
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              >
+                <img src={service.image} alt = {"service image"} />
+              </motion.a>;
             })}
           </div>
         </div>

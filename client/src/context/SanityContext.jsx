@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from "react";
+import React,{ useState } from "react";
 import { client } from "../api/SanityClient";
 
 export const SanityContext = React.createContext();
@@ -12,7 +12,11 @@ export const SanityProvider = ({ children }) => {
     try {
       const query = `*[_type == 'home']{
         ...,
-        "courses" : courses[]->
+        "courses" : courses[]->,
+        "services" : services[]->{
+          ...,
+          "imageUrl": image.asset->url
+        },
       } | order(orderRank)`;
       const result = await client.fetch(query);
 

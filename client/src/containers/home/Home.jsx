@@ -1,4 +1,3 @@
-import React from 'react'
 import { 
   Projects, 
   Courses, 
@@ -7,8 +6,16 @@ import {
   Header,
   Contact
 } from '../../components'
+import { useEffect } from 'react';
+import { useSanity } from "../../hooks/useSanity"
 
 const Home = () => {
+
+  const { homeContent, getHome } = useSanity();
+  useEffect(() => {
+    if(!homeContent) getHome()
+  })
+
   return (
     <>
       <Header />

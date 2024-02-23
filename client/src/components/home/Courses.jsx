@@ -35,7 +35,7 @@ const Courses = () => {
               mis cursos!
             </h2>
             <div className="course-box-container">
-            {coursesData.map((course) => {
+            {coursesData.map((course, index) => {
               return (
                 <CourseBox
                   key = {course.id}
@@ -44,6 +44,7 @@ const Courses = () => {
                   courseName={course.title}
                   image={course.image}
                   url={course.url}
+                  delay={index * 0.1}
                 ></CourseBox>
               );
             })}
