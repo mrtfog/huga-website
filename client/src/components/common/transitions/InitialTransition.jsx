@@ -30,7 +30,7 @@ const textContainer = {
 
 const text = {
   initial: {
-    y: 20,
+    y: 10,
   },
   animate: {
     y: 80,
@@ -74,7 +74,7 @@ const InitialTransition = () => {
           y="50%"
           style={{ fill: "url(#pattern)" }}
         >
-          HUGA
+          HÜGA
         </text>
       </motion.svg>
     </motion.div>
