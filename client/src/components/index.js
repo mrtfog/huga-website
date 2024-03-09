@@ -11,3 +11,4 @@ export { default as Footer } from "./common/footer/Footer.jsx";
 export { default as ServerError } from "./common/errors/ServerError.jsx";
 export { default as NotFound } from "./common/errors/NotFound.jsx";
 export { default as InitialTransition } from "./common/transitions/InitialTransition.jsx";
+export { default as Transition } from "./common/transitions/Transition.jsx"

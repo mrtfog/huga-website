@@ -33,7 +33,7 @@ export const SanityProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getHome();
+    getHome();    
   }, []);
 
   const value = {

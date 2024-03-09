@@ -1,28 +1,35 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectItem } from "../common/ProjectItem";
 import { PORTFOLIO } from "../../lib/constants";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Projects = () => {
+  const [data, setData] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const categories = [
     "Figurines",
     "Estampas",
     "Ilustraciones",
-    "Fichas tecnicas",
+    "Fichas técnicas",
   ];
-  const [data, setData] = useState([]);
 
-  async function requestDataProjects(event = null) {
-    try {
-      if (event != null) {
-        const responseCategory = PORTFOLIO.filter(
-          (project) => project.category == event.target.id
-        );
-        setData(responseCategory);
+  function requestDataProjects(event = null) {
+    const splicedPortfolio = [...PORTFOLIO];
+    
+    if (event != null) {
+
+      if(event.target.id === selectedCategory){
+        setSelectedCategory("");
+        setData(splicedPortfolio);
       } else {
-        setData(PORTFOLIO.splice(1, 12));
+        setSelectedCategory(event.target.id);
+        const responseCategory = PORTFOLIO.filter((project) => project.category === event.target.id);
+        setData(responseCategory);
       }
-    } catch (err) {
-      console.log(err);
+
+    } else {
+      setData(splicedPortfolio);
     }
   }
 
@@ -41,7 +48,7 @@ const Projects = () => {
             return (
               <button
                 id={category}
-                className="categories-btn"
+                className={`categories-btn ${category === selectedCategory ? "btn-selected" : ""}`}
                 onClick={(event) => requestDataProjects(event)}
                 key={category}
               >
@@ -50,11 +57,13 @@ const Projects = () => {
             );
           })}
         </div>
-        <div className="projects-box">
-          {data.map((child) => {
-            return <ProjectItem data={child} key={child.id} />;
-          })}
-        </div>
+        <motion.div layout className="projects-box">
+          <AnimatePresence>
+            {data.map((child) => {
+              return <ProjectItem data={child} key={child.id} />;
+            })}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

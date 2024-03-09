@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CoursesAvatar } from "../../lib/images.js";
 import { ModalCourses } from "../common/ModalCourses.jsx";
 import { coursesData } from "../../lib/constants.js";
@@ -8,21 +8,26 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-const showModalCourse = (event) => {
-  const modalCourse = document.getElementById(event.target.name);
-  modalCourse.classList.toggle("enabled");
-};
 
 const Courses = () => {
   const swiperRef = useRef(null);
+  const [selectedCourse, setSelectedCourse] = useState({})
+  const [showModal, setShowModal] = useState(false);
+  
+  const showModalCourse = (course = null) => {
+    setShowModal(!showModal)
+    if(course){
+      setSelectedCourse(course);
+      document.body.classList.add("overflow-hidden")
+    } else {
+      setSelectedCourse({})
+      document.body.classList.remove("overflow-hidden")
+    }
+  };
 
   return (
     <>
-      {
-        coursesData.map((course) => {
-          return <ModalCourses id={course.id} data={course} key={course.id} />;
-        })
-      }
+      <ModalCourses course={selectedCourse} isInView={showModal} showModal={showModalCourse} />
       <section className="courses" id="Cursos">
         
         <svg className="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -74,19 +79,25 @@ const Courses = () => {
                   coursesData.map((course, index) => (
                       <SwiperSlide key={index}>
                           <article className='course-card'>
-                            <div className='course-image'>
-                              <img 
-                              src={course.image} 
-                              alt={course.title}
-                              />
-                            </div>
+                            <div>
+                              <div className='course-image'>
+                                <img 
+                                src={course.image} 
+                                alt={course.title}
+                                />
+                              </div>
 
-                            <div className="course-title">
-                              <h3>{course.title}</h3>
+                              <div className="course-title">
+                                <h3>{course.title}</h3>
+                                <div className="course-tags-container">
+                                  <span className="course-tag">{course.duration}</span>
+                                  <span className="course-duration">Inicio: {course.start}</span>
+                                </div>
+                              </div>
                             </div>
 
                             <div className="course-btn">
-                              <button name={course.id} onClick={showModalCourse} className="btn">
+                              <button name={course.id} onClick={ ()=> showModalCourse(course)} className="btn">
                                 Ver más
                               </button>
                             </div>

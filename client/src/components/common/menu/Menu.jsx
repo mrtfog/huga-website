@@ -1,20 +1,23 @@
-import React from "react";
 import logo from "../../../assets/img/logo.png";
 import { Link } from "react-scroll";
 import { socialMedias } from "../../../assets/img/SVG";
 import { MenuIcon } from "./MenuIcon";
 
-function Menu(props) {
+function Menu() {
+
+  const menuItems = ["Inicio", "Cursos", "Proyectos", "Servicios", "Contacto"];
+
   return (
     <>
       <div className="menu" id = "menu">
         <img className="menu-logo" src={logo} alt = {"menu logo"}></img>
         <nav>
           <ul className="menu-nav">
-            {props.menuItems.map((item) => {
+            {
+            menuItems.map((item) => {
               return (
                 <li className="menu-li" key={item}>
-                  <Link href="#" to={item} spy={true} smooth={true} offset={-50} duration={700}>{item}</Link>
+                  <Link to={item} spy={true} smooth={true} offset={-50} duration={700}>{item}</Link>
                 </li>
               );
             })}

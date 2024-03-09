@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 const Services = () => {
   return (
     <section className="services" id="Servicios">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 1440 320"
+      className="absolute top-0 left-0"
+      >
         <path
           fill="#AB7994"
           fillOpacity="1"
@@ -23,6 +27,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               >
                 <img src={service.image} alt = {"service image"} />
               </motion.a>;

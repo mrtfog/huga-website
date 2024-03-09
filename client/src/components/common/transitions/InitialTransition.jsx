@@ -44,7 +44,7 @@ const text = {
 const InitialTransition = () => {
   return (
     <motion.div
-      className="absolute z-50 flex items-center justify-center w-full bg-[#ECC03C] "
+      className="absolute z-50 flex items-center justify-center w-full bg-[#ECC03C] pointer-events-none"
       initial="initial"
       animate="animate"
       variants={yellowBox}

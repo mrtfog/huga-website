@@ -20,6 +20,7 @@
   }
 
   .contact-input{
+    color: var(--main-bg-color);
     padding: 20px;
     margin-bottom: 2rem;
   }

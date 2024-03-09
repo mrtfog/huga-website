@@ -13,8 +13,13 @@ export default {
       type: 'string',
     },
     {
-      name: 'description',
-      title: 'Descripción',
+      name: 'image',
+      title: 'Imagen',
+      type: 'image',
+    },
+    {
+      name: 'url',
+      title: 'Url',
       type: 'string',
     },
   ],

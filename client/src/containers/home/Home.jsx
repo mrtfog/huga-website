@@ -8,6 +8,7 @@ import {
 } from '../../components'
 import { useEffect } from 'react';
 import {useSanity} from "../../lib/useSanity";
+import { Transition } from '../../components';
 
 const Home = () => {
 
@@ -28,4 +29,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home 
