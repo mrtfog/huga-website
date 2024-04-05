@@ -9,10 +9,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_01wq6ta",
-        "template_ousunho",
+        import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID,
         e.target,
-        "fdISMbfmpqCeEC6Nt"
+        import.meta.env.VITE_REACT_APP_EMAILJS_PUBLIC_ID
       )
       .then(
         (result) => {
