@@ -65,8 +65,8 @@ export default {
       },
     },
     {
-      name: 'description',
-      title: 'Descripción',
+      name: 'month',
+      title: 'Mes de Lanzamiento del Proyecto',
       type: 'text',
       options: {
         list: months,
