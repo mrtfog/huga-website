@@ -5,6 +5,21 @@ const ESTAMPAS = 'estampas'
 const ILUSTRACIONES = 'ilustraciones'
 const FICHASTECNICAS = 'fichas-tecnicas'
 
+const months = [
+  'Enero',
+  'Febrero',
+  'Marzo',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Septiembre',
+  'Octubre',
+  'Noviembre',
+  'Diciembre',
+]
+
 export default {
   name: 'portfolio',
   title: 'Portafolio',
@@ -26,9 +41,36 @@ export default {
       type: 'string',
     },
     {
+      name: 'description',
+      title: 'Descripción',
+      type: 'string',
+    },
+    {
       name: 'image',
       title: 'Imágen',
       type: 'image',
+      description: 'Recomendación: Imágen de tamaño aproximado 250x250 y formato .webp',
+    },
+    {
+      name: 'year',
+      title: 'Año',
+      type: 'number',
+      description: 'Selecciona el año',
+      options: {
+        list: [...Array(new Date().getFullYear() - 1899).keys()].map((i) => ({
+          title: `${i + 1900}`,
+          value: i + 1900,
+        })),
+        layout: 'dropdown',
+      },
+    },
+    {
+      name: 'description',
+      title: 'Descripción',
+      type: 'text',
+      options: {
+        list: months,
+      },
     },
   ],
   preview: {

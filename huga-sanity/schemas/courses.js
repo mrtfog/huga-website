@@ -1,5 +1,20 @@
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
+const months = [
+  'Enero',
+  'Febrero',
+  'Marzo',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Septiembre',
+  'Octubre',
+  'Noviembre',
+  'Diciembre',
+]
+
 export default {
   name: 'courses',
   title: 'Cursos',
@@ -18,14 +33,70 @@ export default {
       type: 'string',
     },
     {
+      name: 'duration',
+      title: 'Duración',
+      type: 'string',
+    },
+    {
       name: 'description',
       title: 'Descripción',
       type: 'text',
+      options: {
+        list: months,
+      },
     },
     {
-      name: 'temario',
-      title: 'Temario',
+      name: 'topics',
+      title: 'Tópicos',
       type: 'text',
+    },
+    {
+      name: 'goals',
+      title: 'Objetivos',
+      type: 'text',
+    },
+    {
+      name: 'targetAudience',
+      title: 'Público Objetivo',
+      type: 'text',
+    },
+    {
+      name: 'modules',
+      title: 'Módulos',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Título',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Descripción',
+              type: 'text',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'description',
+            },
+          },
+        },
+      ],
+    },
+    {
+      name: 'start',
+      title: 'Inicio',
+      type: 'text',
+    },
+    {
+      name: 'enrollment',
+      title: 'Matrícula',
+      type: 'number',
     },
     {
       name: 'price',
@@ -33,11 +104,38 @@ export default {
       type: 'number',
     },
     {
+      name: 'asyncCourseAvailability',
+      title: '¿El curso tiene acceso asincrónico?',
+      type: 'boolean',
+      options: {
+        layout: 'radio',
+        list: [
+          {title: 'Sí', value: true},
+          {title: 'No', value: false},
+        ],
+      },
+    },
+    {
+      name: 'asyncCoursePrice',
+      title: 'Valor del Curso Asincrónico',
+      type: 'number',
+      hidden: ({document}) => !document?.asyncCourseAvailability,
+    },
+    {
+      name: 'paymentUrl',
+      title: 'Link de pago',
+      type: 'string',
+    },
+    {
       name: 'available',
       title: 'Disponible',
-      type: 'string',
+      type: 'boolean',
       options: {
-        list: ['Sí', 'No'],
+        layout: 'radio',
+        list: [
+          {title: 'Sí', value: true},
+          {title: 'No', value: false},
+        ],
       },
     },
   ],
