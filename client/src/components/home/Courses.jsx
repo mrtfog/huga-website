@@ -2,35 +2,42 @@ import { useRef, useState } from "react";
 import { CoursesAvatar } from "../../lib/images.js";
 import { ModalCourses } from "../common/ModalCourses.jsx";
 import { coursesData } from "../../lib/constants.js";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
-
-const Courses = () => {
+const Courses = ({ sectionData }) => {
+  console.log(sectionData);
   const swiperRef = useRef(null);
-  const [selectedCourse, setSelectedCourse] = useState({})
+  const [selectedCourse, setSelectedCourse] = useState({});
   const [showModal, setShowModal] = useState(false);
-  
+
   const showModalCourse = (course = null) => {
-    setShowModal(!showModal)
-    if(course){
+    setShowModal(!showModal);
+    if (course) {
       setSelectedCourse(course);
-      document.body.classList.add("overflow-hidden")
+      document.body.classList.add("overflow-hidden");
     } else {
-      setSelectedCourse({})
-      document.body.classList.remove("overflow-hidden")
+      setSelectedCourse({});
+      document.body.classList.remove("overflow-hidden");
     }
   };
 
   return (
     <>
-      <ModalCourses course={selectedCourse} isInView={showModal} showModal={showModalCourse} />
+      <ModalCourses
+        course={selectedCourse}
+        isInView={showModal}
+        showModal={showModalCourse}
+      />
       <section className="courses" id="Cursos">
-        
-        <svg className="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          className="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+        >
           <path
             fill="#D57C8C"
             fillOpacity="1"
@@ -39,88 +46,100 @@ const Courses = () => {
         </svg>
 
         <div className="course-container">
-
           <div id="courses-avatar">
             <img src={CoursesAvatar} alt={"courses-avatar"}></img>
           </div>
 
           <div className="course-info">
-            <h2>
-              Visitá mis cursos!
-            </h2>
+            <h2>Visitá mis cursos!</h2>
             <div className="course-box-container">
               <Swiper
-              ref={swiperRef}
-              slidesPerView={1}
-              centeredSlides={false}
-              spaceBetween={20}
-              grabCursor={true}
-              navigation={{
-                  nextEl: '.swiper-button-next',
-                  prevEl: '.swiper-button-prev',
-              }}
-              pagination={{
+                ref={swiperRef}
+                slidesPerView={1}
+                centeredSlides={false}
+                spaceBetween={20}
+                grabCursor={true}
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+                pagination={{
                   clickable: true,
-              }}
-              modules={[Navigation]}
-              className="w-full px-2 py-6"
-              breakpoints={{
-                640: {
+                }}
+                modules={[Navigation]}
+                className="w-full px-2 py-6"
+                breakpoints={{
+                  1921: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                  },
+                  1920: {
                     slidesPerView: 4,
                     spaceBetween: 20,
-                },
-                0: {
+                  },
+                  1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  0: {
                     slidesPerView: 1,
                     spaceBetween: 10,
-                },
-              }}
+                  },
+                }}
               >
-                {
-                  coursesData.map((course, index) => (
+                {sectionData.courses && sectionData.courses.length
+                  ? sectionData.courses.map((course, index) => (
                       <SwiperSlide key={index}>
-                          <article className='course-card'>
-                            <div>
-                              <div className='course-image'>
-                                <img 
-                                src={course.image} 
-                                alt={course.title}
-                                />
-                              </div>
-
-                              <div className="course-title">
-                                <h3>{course.title}</h3>
-                                <div className="course-tags-container">
-                                  <span className="course-tag">{course.duration}</span>
-                                  <span className="course-duration">Inicio: {course.start}</span>
-                                </div>
-                              </div>
+                        <article className="course-card">
+                          <div>
+                            <div className="course-image">
+                              <picture>
+                                <img src={course.imageUrl} alt={course.title} />
+                              </picture>
                             </div>
 
-                            <div className="course-btn">
-                              <button name={course.id} onClick={ ()=> showModalCourse(course)} className="btn">
-                                Ver más
-                              </button>
+                            <div className="course-title">
+                              <h3>{course.title}</h3>
+                              <div className="course-tags-container">
+                                <span className="course-tag">
+                                  {course.duration}
+                                </span>
+                                <span className="course-duration">
+                                  Inicio: {course.start}
+                                </span>
+                              </div>
                             </div>
+                          </div>
 
-                          </article>
+                          <div className="course-btn">
+                            <button
+                              name={course.id}
+                              onClick={() => showModalCourse(course)}
+                              className="btn"
+                            >
+                              Ver más
+                            </button>
+                          </div>
+                        </article>
                       </SwiperSlide>
-                  ))
-                }
+                    ))
+                  : ""}
               </Swiper>
 
-              <div className='text-center mt-4 flex items-center justify-center gap-4 py-4'>
+              <div className="text-center mt-4 flex items-center justify-center gap-4 py-4">
                 <button className="swiper-button-prev">
                   <BsArrowLeft size={44} className="text-white" />
                 </button>
-                <button className="swiper-button-next"> 
-                  <BsArrowRight size={44} className="text-white" /> 
+                <button className="swiper-button-next">
+                  <BsArrowRight size={44} className="text-white" />
                 </button>
               </div>
-              
             </div>
           </div>
-
-
         </div>
       </section>
     </>
