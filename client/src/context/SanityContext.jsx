@@ -12,11 +12,18 @@ export const SanityProvider = ({ children }) => {
     try {
       const query = `*[_type == 'home']{
         ...,
-        "courses" : courses[]->,
+        "courses" : courses[]->{
+          ...,
+          "imageUrl": image.asset->url
+        },
         "services" : services[]->{
           ...,
           "imageUrl": image.asset->url
         },
+        "projects": projects[]->{
+          ...,
+          "imageUrl": image.asset->url
+        }
       } | order(orderRank)`;
       const result = await client.fetch(query);
 
@@ -33,7 +40,7 @@ export const SanityProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getHome();    
+    getHome();
   }, []);
 
   const value = {
