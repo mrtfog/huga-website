@@ -1,14 +1,13 @@
-import { serviceLinks } from "../../assets/img/services/index"
-import { ServicesAvatar } from "../../lib/images"
+import { ServicesAvatar } from "../../lib/images";
 import { motion } from "framer-motion";
 
-const Services = () => {
+const Services = ({ sectionData }) => {
   return (
     <section className="services" id="Servicios">
-      <svg 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 1440 320"
-      className="absolute top-0 left-0"
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        className="absolute top-0 left-0"
       >
         <path
           fill="#AB7994"
@@ -20,18 +19,22 @@ const Services = () => {
         <div className="flex-box">
           <h2>Servicios</h2>
           <div className="services-grid">
-            {serviceLinks.map((service, i) => {
-              return <motion.a 
-              key = {i} 
-              href = {service.url}
-              initial={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              >
-                <img src={service.image} alt = {"service image"} />
-              </motion.a>;
-            })}
+            {sectionData && sectionData.services && sectionData.services.length
+              ? sectionData.services.map((service, i) => {
+                  return (
+                    <motion.a
+                      key={i}
+                      href={service.url}
+                      initial={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <img src={service.image} alt={"service image"} />
+                    </motion.a>
+                  );
+                })
+              : ""}
           </div>
         </div>
         <img

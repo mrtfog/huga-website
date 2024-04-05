@@ -18,7 +18,7 @@ export const SanityProvider = ({ children }) => {
         },
         "services" : services[]->{
           ...,
-          "imageUrl": image.asset->url
+          "image": image.asset->url
         },
         "projects": projects[]->{
           ...,

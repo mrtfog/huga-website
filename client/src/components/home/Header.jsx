@@ -3,22 +3,16 @@ import cv from "../../assets/docs/cv.pdf";
 import { PersonalAvatar } from "../../lib/images";
 import { IoChevronDown } from "react-icons/io5";
 
-const Header = () => {
+const Header = ({ sectionData }) => {
   return (
-    <header className="header" id="Inicio">
+    <section className="header" id="Inicio">
       <div className="header-intro">
-        <h1  className="leading-none">
+        <h1 className="leading-none">
           Hola, <span className="block" />
           <span>soy Anto!</span>
         </h1>
 
-        <p className="mt-8">
-          Diseñadora gráfica y de indumentaria recibida en la Universidad
-          de Buenos Aires. Me especializo en ilustración y fotografía,
-          conceptualización y comunicación.
-          <span className="block" />
-          Contame tu idea y hagámosla realidad!
-        </p>
+        <p className="mt-8">{sectionData && sectionData.heroDescription}</p>
 
         <div className="header-btn-container">
           <Link
@@ -42,7 +36,6 @@ const Header = () => {
       </div>
       <Link
         to="Cursos"
-        href="#"
         spy={true}
         smooth={true}
         offset={-50}
@@ -51,7 +44,7 @@ const Header = () => {
       >
         <IoChevronDown />
       </Link>
-    </header>
+    </section>
   );
 };
 export default Header;
