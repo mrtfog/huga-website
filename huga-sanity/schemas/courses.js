@@ -23,6 +23,18 @@ export default {
   fields: [
     orderRankField({type: 'courses'}),
     {
+      name: 'available',
+      title: 'Disponible',
+      type: 'boolean',
+      options: {
+        layout: 'radio',
+        list: [
+          {title: 'Sí', value: true},
+          {title: 'No', value: false},
+        ],
+      },
+    },
+    {
       name: 'image',
       title: 'Imágen',
       type: 'image',
@@ -91,7 +103,7 @@ export default {
     {
       name: 'start',
       title: 'Inicio',
-      type: 'text',
+      type: 'string',
     },
     {
       name: 'enrollment',
@@ -125,18 +137,6 @@ export default {
       name: 'paymentUrl',
       title: 'Link de pago',
       type: 'string',
-    },
-    {
-      name: 'available',
-      title: 'Disponible',
-      type: 'boolean',
-      options: {
-        layout: 'radio',
-        list: [
-          {title: 'Sí', value: true},
-          {title: 'No', value: false},
-        ],
-      },
     },
   ],
   preview: {
