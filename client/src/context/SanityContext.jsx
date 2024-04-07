@@ -7,6 +7,23 @@ export const SanityProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
   const [homeContent, setHomeContent] = useState(null);
+  const [courses, setCourses] = useState(null);
+
+  const getCourses = async () => {
+    try {
+      const query = `*[_type == 'courses']{
+        ...,
+        "image": image.asset->url
+      }`;
+      const result = await client.fetch(query);
+
+      if (result) {
+        setCourses(result);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getHome = async () => {
     try {
@@ -48,6 +65,9 @@ export const SanityProvider = ({ children }) => {
     fetchError,
     homeContent,
     getHome,
+    courses,
+    setCourses,
+    getCourses,
   };
 
   return (
