@@ -6,6 +6,7 @@ import { BsCheck } from "react-icons/bs";
 import PrincingCard from "./components/PrincingCard";
 import Timeline from "./components/Timeline";
 import { PersonalAvatar } from "../../../lib/images";
+import { Helmet } from "react-helmet";
 import "../../../assets/styles/components/courses/CourseDetail.css";
 
 const CourseDetails = () => {
@@ -31,10 +32,22 @@ const CourseDetails = () => {
     }
   }, [id, courses, getCourses]);
 
-  console.log(currentCourse);
-
   return (
     <>
+      <Helmet>
+        <title>{`Hüga | ${currentCourse?.title}`}</title>
+        <meta name="description" content={currentCourse?.description} />
+        <meta
+          name="keywords"
+          content="diseño de indumentaria, diseño gráfico, branding, identidad de marca, redes sociales, producto, ilustración, fotografía de moda, estampas, fichas técnicas, logotipos"
+        />
+        <meta property="og:title" content={`Hüga | ${currentCourse?.title}`} />
+        <meta property="og:description" content={currentCourse?.description} />
+        <meta
+          property="og:site_name"
+          content={`Hüga | ${currentCourse?.title}`}
+        ></meta>
+      </Helmet>
       {courseNotFound ? (
         "Curso no encontrado"
       ) : (

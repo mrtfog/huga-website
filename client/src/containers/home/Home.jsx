@@ -1,6 +1,7 @@
 import { Projects, Courses, Services, Header, Contact } from "../../components";
 import { Fragment, useEffect } from "react";
 import { useSanity } from "../../hooks/useSanity";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const { homeContent, getHome } = useSanity();
@@ -11,6 +12,29 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Hüga | Estudio de diseño de gráfico</title>
+        <meta
+          name="description"
+          content="Estudio de diseño integral, enfocado en creación de marcas únicas. Servicios de diseño de indumentaria/gráfico, cursos, ilustraciones, branding, packaging."
+        />
+        <meta
+          name="keywords"
+          content="diseño de indumentaria, diseño gráfico, branding, identidad de marca, redes sociales, producto, ilustración, fotografía de moda, estampas, fichas técnicas, logotipos"
+        />
+        <meta
+          property="og:title"
+          content="Hüga | Estudio de diseño de gráfico"
+        />
+        <meta
+          property="og:description"
+          content="Estudio de diseño integral, enfocado en creación de marcas únicas. Servicios de diseño de indumentaria/gráfico, cursos, ilustraciones, branding, packaging."
+        />
+        <meta
+          property="og:site_name"
+          content="Hüga | Estudio de diseño de gráfico"
+        ></meta>
+      </Helmet>
       {homeContent && homeContent.length
         ? homeContent.map((section) => (
             <Fragment key={section.type}>
