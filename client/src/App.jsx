@@ -12,14 +12,16 @@ import { useSanity } from "./hooks/useSanity";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 const Home = lazy(() => import("./containers/home/Home"));
-const Courses = lazy(() => import("./containers/courses/Courses"));
+const CourseDetail = lazy(() =>
+  import("./containers/courses/course-details/CourseDetails")
+);
 // const Services = lazy(() => import("./containers/services/Services"));
 import "./App.css";
 import "./lib/helpers";
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/cursos", element: <Courses /> },
+  { path: "/cursos/:id", element: <CourseDetail /> },
   // { path: "/servicios", element: <Services /> },
   { path: "*", element: <NotFound /> },
 ];
