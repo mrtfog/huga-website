@@ -42,6 +42,7 @@ body {
   padding: 10px;
   color: var(--main-bg-color);
   background-color: var(--pink-color);
+  cursor: not-allowed;
   border: none;
   border-radius: 10px;
   cursor: pointer;
