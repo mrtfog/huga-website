@@ -9,7 +9,7 @@ function Menu() {
 
   return (
     <>
-      <div className="menu" id = "menu">
+      <header className="menu" id = "menu">
         <img className="menu-logo" src={logo} alt = {"menu logo"}></img>
         <nav>
           <ul className="menu-nav">
@@ -23,7 +23,7 @@ function Menu() {
             })}
           </ul>
         </nav>
-      </div>
+      </header>
       <div className="menu-social-media">
         <div className="menu-social-media-container">
           {socialMedias.map((data, i) => {
