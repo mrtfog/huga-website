@@ -40,6 +40,15 @@ export default {
       type: 'image',
     },
     {
+      name: 'courseIntroducingVideo',
+      title: 'Video de Introducción del Curso',
+      description: 'Recomendación: Peso inferior a 50MB y formato .webm/.mp4',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+    },
+    {
       name: 'title',
       title: 'Título',
       type: 'string',
@@ -137,6 +146,12 @@ export default {
       name: 'paymentUrl',
       title: 'Link de pago',
       type: 'string',
+    },
+    {
+      name: 'asyncCoursePaymentUrl',
+      title: 'Link de pago (Curso Asincrónico)',
+      type: 'string',
+      hidden: ({document}) => !document?.asyncCourseAvailability,
     },
   ],
   preview: {

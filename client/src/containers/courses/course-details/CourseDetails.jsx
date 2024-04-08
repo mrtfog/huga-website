@@ -61,7 +61,28 @@ const CourseDetails = () => {
                 {currentCourse?.description}
               </Typography>
             </div>
-            <div className="course-hero__video"></div>
+            <div className="course-hero__video">
+              {currentCourse && currentCourse.courseIntroducingVideo ? (
+                <video
+                  loop
+                  poster={currentCourse?.image}
+                  controls
+                  preload="auto"
+                >
+                  <source
+                    src={currentCourse?.courseIntroducingVideo}
+                    type="video/mp4"
+                  />
+                </video>
+              ) : (
+                <picture>
+                  <img
+                    src={currentCourse?.image}
+                    alt={`Imagen del curso "${currentCourse?.title}"`}
+                  />
+                </picture>
+              )}
+            </div>
           </section>
           <section className="course-topics">
             <svg

@@ -13,7 +13,9 @@ export const SanityProvider = ({ children }) => {
     try {
       const query = `*[_type == 'courses']{
         ...,
-        "image": image.asset->url
+        "image": image.asset->url,
+        "courseIntroducingVideo": courseIntroducingVideo.asset->url
+
       }`;
       const result = await client.fetch(query);
 
@@ -31,7 +33,8 @@ export const SanityProvider = ({ children }) => {
         ...,
         "courses" : courses[]->{
           ...,
-          "imageUrl": image.asset->url
+          "imageUrl": image.asset->url,
+          "videoUrl": courseIntroducingVideo.asset->url
         },
         "services" : services[]->{
           ...,

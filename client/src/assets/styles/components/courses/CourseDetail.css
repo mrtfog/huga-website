@@ -25,6 +25,22 @@
   background-color: #d0ccd6;
   border-radius: 1rem;
   overflow: hidden;
+  transition: border-radius 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.course-hero .course-hero__video:hover {
+  border-radius: 2.5rem;
+}
+
+.course-hero__video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.course-hero__video img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .course-topics {
