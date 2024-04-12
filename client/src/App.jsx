@@ -15,14 +15,16 @@ const Home = lazy(() => import("./containers/home/Home"));
 const CourseDetail = lazy(() =>
   import("./containers/courses/course-details/CourseDetails")
 );
-// const Services = lazy(() => import("./containers/services/Services"));
+const ServiceDetail = lazy(() =>
+  import("./containers/services/service-details/ServiceDetails")
+);
 import "./App.css";
 import "./lib/helpers";
 
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/cursos/:id", element: <CourseDetail /> },
-  // { path: "/servicios", element: <Services /> },
+  { path: "/servicios/:id", element: <ServiceDetail /> },
   { path: "*", element: <NotFound /> },
 ];
 

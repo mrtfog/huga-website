@@ -19,7 +19,6 @@ const CourseDetails = () => {
   useEffect(() => {
     if (courses) {
       const findCurrentCourse = courses.find((course) => course._id === id);
-      console.log(findCurrentCourse);
 
       if (findCurrentCourse) {
         setCurrentCourse(findCurrentCourse);
