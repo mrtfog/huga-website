@@ -15,7 +15,7 @@ const ServiceDetails = () => {
 
   useEffect(() => {
     if (services) {
-      const findCurrentService = courses.find((course) => course._id === id);
+      const findCurrentService = services.find((service) => service._id === id);
 
       if (findCurrentService) {
         setCurrentService(findCurrentService);
