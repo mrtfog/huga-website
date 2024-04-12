@@ -52,7 +52,7 @@ export const SanityProvider = ({ children }) => {
         "courses" : courses[]->{
           ...,
           "imageUrl": image.asset->url,
-          "videoUrl": courseIntroducingVideo.asset->url
+          "courseIntroducingVideo": courseIntroducingVideo.asset->url
         },
         "services" : services[]->{
           ...,
