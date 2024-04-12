@@ -1,5 +1,6 @@
 import { ServicesAvatar } from "../../lib/images";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Services = ({ sectionData }) => {
   return (
@@ -22,16 +23,26 @@ const Services = ({ sectionData }) => {
             {sectionData && sectionData.services && sectionData.services.length
               ? sectionData.services.map((service, i) => {
                   return (
-                    <motion.a
+                    <motion.article
                       key={i}
-                      href={service.url}
                       initial={{ opacity: 0, y: 20 }}
                       transition={{ duration: 0.5, delay: i * 0.1 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
+                      className="service-card"
                     >
-                      <img src={service.image} alt={"service image"} />
-                    </motion.a>
+                      <Link to={`servicios/${service._id}`}>
+                        {service.serviceIntroducingVideo && (
+                          <video loop autoPlay muted playsInline preload="auto">
+                            <source
+                              src={service.serviceIntroducingVideo}
+                              type="video/mp4"
+                            />
+                          </video>
+                        )}
+                        <img src={service.image} alt={"service image"} />
+                      </Link>
+                    </motion.article>
                   );
                 })
               : ""}
