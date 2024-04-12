@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'benefits',
-      title: 'Módulos',
+      title: 'Beneficios',
       type: 'array',
       of: [
         {
