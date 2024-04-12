@@ -8,6 +8,24 @@ export const SanityProvider = ({ children }) => {
   const [fetchError, setFetchError] = useState(false);
   const [homeContent, setHomeContent] = useState(null);
   const [courses, setCourses] = useState(null);
+  const [services, setServices] = useState(null);
+
+  const getServices = async () => {
+    try {
+      const query = `*[_type == 'services']{
+        ...,
+        "image": image.asset->url,
+        "serviceIntroducingVideo": serviceIntroducingVideo.asset->url
+      }`;
+      const result = await client.fetch(query);
+
+      if (result) {
+        setServices(result);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getCourses = async () => {
     try {
@@ -38,7 +56,8 @@ export const SanityProvider = ({ children }) => {
         },
         "services" : services[]->{
           ...,
-          "image": image.asset->url
+          "image": image.asset->url,
+          "serviceIntroducingVideo": serviceIntroducingVideo.asset->url
         },
         "projects": projects[]->{
           ...,
@@ -71,6 +90,8 @@ export const SanityProvider = ({ children }) => {
     courses,
     setCourses,
     getCourses,
+    services,
+    getServices,
   };
 
   return (
