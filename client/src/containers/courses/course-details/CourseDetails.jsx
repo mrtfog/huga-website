@@ -19,7 +19,6 @@ const CourseDetails = () => {
   useEffect(() => {
     if (courses) {
       const findCurrentCourse = courses.find((course) => course._id === id);
-      console.log(findCurrentCourse);
 
       if (findCurrentCourse) {
         setCurrentCourse(findCurrentCourse);
@@ -88,7 +87,7 @@ const CourseDetails = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1440 320"
-              className="absolute -top-24 left-0 z-0 pointer-events-none"
+              className="absolute top-0 lg:-top-24 left-0 z-0 pointer-events-none"
             >
               <path
                 fill="#F6EEEA"

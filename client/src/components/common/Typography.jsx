@@ -1,13 +1,13 @@
 import React from "react";
 
 const variantClasses = {
-  h1: "text-5xl font-bold",
-  h2: "text-4xl font-semibold",
+  h1: "lg:text-5xl font-bold xs:text-2xl sm:text-2xl",
+  h2: "text-4xl font-semibold xs:text-xl sm:text-xl",
   h3: "text-xl font-medium",
-  large: "text-xl",
-  medium: "text-lg",
-  small: "text-md",
-  xsmall: "text-sm",
+  large: "xs:text-lg sm:text-lg lg:text-xl",
+  medium: "xs:text-md sm:text-md lg:text-lg",
+  small: "xs:text-sm sm:text-sm lg:text-md",
+  xsmall: "xs:text-xs sm:text-xs lg:text-sm",
 };
 
 const colorClasses = {
