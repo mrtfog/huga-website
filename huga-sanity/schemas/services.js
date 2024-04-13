@@ -8,19 +8,82 @@ export default {
   fields: [
     orderRankField({type: 'services'}),
     {
+      name: 'image',
+      title: 'Imágen',
+      type: 'image',
+    },
+    {
+      name: 'serviceIntroducingVideo',
+      title: 'Video de Introducción del Servicio',
+      description: 'Recomendación: Peso inferior a 50MB y formato .webm/.mp4',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+    },
+    {
       name: 'title',
       title: 'Título',
       type: 'string',
     },
     {
-      name: 'image',
-      title: 'Imagen',
-      type: 'image',
+      name: 'benefits',
+      title: 'Beneficios',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Título',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Descripción',
+              type: 'text',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'description',
+            },
+          },
+        },
+      ],
     },
     {
-      name: 'url',
-      title: 'Url',
-      type: 'string',
+      name: 'modules',
+      title: 'Módulos',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Título',
+              type: 'string',
+            },
+            {
+              name: 'description',
+              title: 'Descripción',
+              type: 'text',
+            },
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'description',
+            },
+          },
+        },
+      ],
+      options: {
+        limit: 3,
+      },
     },
   ],
   preview: {
