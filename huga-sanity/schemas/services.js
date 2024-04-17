@@ -27,6 +27,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'description',
+      title: 'Descripción',
+      type: 'text',
+    },
+    {
       name: 'benefits',
       title: 'Beneficios',
       type: 'array',
