@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useSanity } from "../../../hooks/useSanity";
 import { Helmet } from "react-helmet";
 import { Typography } from "../../../components";
-import { BsCheck } from "react-icons/bs";
+import { BsLink as LinkIcon } from "react-icons/bs";
 import { PersonalAvatar } from "../../../lib/images";
 import "../../../assets/styles/components/services/ServiceDetails.css";
 
@@ -51,37 +51,35 @@ const ServiceDetails = () => {
       ) : (
         <>
           <section className="service-hero">
-            <div className="service-hero__inner">
-              <div className="service-hero__description">
-                <Typography as="h1" variant="h1" color="white">
-                  {currentService?.title}
-                </Typography>
-                <Typography as="p" variant="small" color="lightGray">
-                  {currentService?.description}
-                </Typography>
-              </div>
-              <div className="service-hero__video">
-                {currentService && currentService.serviceIntroducingVideo ? (
-                  <video
-                    loop
-                    poster={currentService?.image}
-                    controls
-                    preload="auto"
-                  >
-                    <source
-                      src={currentService?.serviceIntroducingVideo}
-                      type="video/mp4"
-                    />
-                  </video>
-                ) : (
-                  <picture>
-                    <img
-                      src={currentService?.image}
-                      alt={`Imagen del curso "${currentService?.title}"`}
-                    />
-                  </picture>
-                )}
-              </div>
+            <div className="service-hero__description">
+              <Typography as="h1" variant="h1" color="black">
+                {currentService?.title}
+              </Typography>
+              <Typography as="p" variant="small" color="darkGray">
+                {currentService?.description}
+              </Typography>
+            </div>
+            <div className="service-hero__video">
+              {currentService && currentService.serviceIntroducingVideo ? (
+                <video
+                  loop
+                  poster={currentService?.image}
+                  controls
+                  preload="auto"
+                >
+                  <source
+                    src={currentService?.courseIntroducingVideo}
+                    type="video/mp4"
+                  />
+                </video>
+              ) : (
+                <picture>
+                  <img
+                    src={currentService?.image}
+                    alt={`Imagen del curso "${currentService?.title}"`}
+                  />
+                </picture>
+              )}
             </div>
           </section>
           <section className="service-work_modality">
@@ -93,10 +91,7 @@ const ServiceDetails = () => {
               <div className="service-work_modality__wrapper">
                 {currentService && currentService.modules.length
                   ? currentService.modules.map((modality) => (
-                      <article
-                        key={modality._id}
-                        className="service-work_modality__card"
-                      >
+                      <article key={modality._id} className="service__card">
                         <Typography as="h3" variant="h3" color="black">
                           {modality.title}
                         </Typography>
@@ -115,10 +110,10 @@ const ServiceDetails = () => {
                 Beneficios
               </Typography>
 
-              <ul role="list">
+              <ul role="list" className="gap-5 flex flex-col py-10">
                 {currentService && currentService.benefits
                   ? currentService.benefits.map((benefit) => (
-                      <article key={benefit._id}>
+                      <article className="service__card" key={benefit._id}>
                         <Typography as="h3" variant="h3" color="black">
                           {benefit.title}
                         </Typography>
@@ -129,6 +124,68 @@ const ServiceDetails = () => {
                     ))
                   : ""}
               </ul>
+            </div>
+          </section>
+          <section className="service-contact">
+            <div className="service-contact__inner">
+              <article className="service__card">
+                <Typography as="h3" variant="h3" color="black">
+                  ¡Reserva una Entrevista!
+                </Typography>
+                <Typography as="p" variant="p" color="darkGray">
+                  Es tu oportunidad para conectar directamente con nuestros
+                  expertos en diseño gráfico. Durante esta sesión personalizada,
+                  discutiremos tus necesidades específicas y exploraremos cómo
+                  nuestros servicios pueden ayudarte a alcanzar tus objetivos
+                  visuales y de marca. Asegura tu lugar hoy y da el primer paso
+                  hacia la transformación visual de tu proyecto.
+                </Typography>
+
+                <a
+                  href={`${currentService?.calendlyLink}`}
+                  className="flex items-center gap-2 mt-5 font-semibold underline"
+                  aria-label="Reservación de Entrevista"
+                >
+                  {" "}
+                  Reserva en Calendly <LinkIcon size={24} />
+                </a>
+              </article>
+
+              <article className="service__card">
+                <Typography as="h3" variant="h3" color="black">
+                  ¿Tenés Alguna Consulta?
+                </Typography>
+                <Typography as="p" variant="p" color="darkGray">
+                  Estamos acá para ayudarte. Si tenés preguntas sobre nuestros
+                  servicios o necesitas asesoramiento específico para tu
+                  proyecto, no dudes en contactarnos. Nuestro equipo está listo
+                  para ofrecerte las respuestas y la orientación que necesitas
+                  para avanzar con confianza.
+                </Typography>
+
+                <a
+                  href={`mailto:`}
+                  className="flex items-center gap-2 mt-5 font-semibold underline"
+                  aria-label="Reservación de Entrevista"
+                >
+                  {" "}
+                  Contactame por Email <LinkIcon size={24} />
+                </a>
+              </article>
+
+              <div className="farewell-card">
+                <Typography as="h3" variant="h3" color="white">
+                  ¡Esperamos verte pronto!
+                </Typography>
+
+                <picture className="flex items-center justify-center mt-5">
+                  <img
+                    src={PersonalAvatar}
+                    alt="Imagen de Avatar Personal"
+                    className="w-3/4 h-auto object-contain"
+                  />
+                </picture>
+              </div>
             </div>
           </section>
         </>

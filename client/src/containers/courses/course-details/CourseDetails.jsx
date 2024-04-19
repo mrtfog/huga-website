@@ -262,7 +262,7 @@ const CourseDetails = () => {
                   </Typography>
                 </div>
 
-                <div className="course-promotion-hook__image">
+                <div className="farewell-card">
                   <Typography as="h3" variant="h3" color="white">
                     ¡Esperamos verte pronto!
                   </Typography>

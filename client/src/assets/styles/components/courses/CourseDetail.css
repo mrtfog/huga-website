@@ -223,15 +223,6 @@
   margin-top: 20px;
 }
 
-.course-promotion-hook__container .course-promotion-hook__image {
-  text-align: center;
-  width: 100%;
-  background-color: #ef7d8e;
-  border-radius: 1rem;
-  padding: 2rem;
-  height: 100%;
-}
-
 @media only screen and (max-width: 480px) {
   .course-hero {
     display: flex;
