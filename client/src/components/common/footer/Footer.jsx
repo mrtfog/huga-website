@@ -2,10 +2,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        <h2>Huga-Website all rights reserved © 2024</h2>
-        <h3>Developed by Rocchetta Luciano</h3>
+        <p>Huga-Website all rights reserved © 2024</p>
       </div>
     </footer>
   );
-}
-export default Footer
+};
+export default Footer;
