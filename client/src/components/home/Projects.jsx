@@ -36,8 +36,6 @@ const Projects = ({ sectionData }) => {
     requestDataProjects();
   }, [sectionData]);
 
-  console.log(sectionData);
-
   return (
     <section className="projects" id="Proyectos">
       <h2>

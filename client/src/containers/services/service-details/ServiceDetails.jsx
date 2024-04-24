@@ -29,7 +29,6 @@ const ServiceDetails = () => {
     }
   }, [id, services, getServices]);
 
-  console.log(currentService);
   return (
     <>
       <Helmet>
