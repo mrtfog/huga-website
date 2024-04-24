@@ -12,7 +12,9 @@ const Header = ({ sectionData }) => {
           <span>soy Anto!</span>
         </h1>
 
-        <p className="mt-8">{sectionData && sectionData.heroDescription}</p>
+        <p className="xs:mt-4 sm:mt-4 md:mt-8">
+          {sectionData && sectionData.heroDescription}
+        </p>
 
         <div className="header-btn-container">
           <Link
