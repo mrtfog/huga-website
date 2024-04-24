@@ -6,7 +6,18 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.farewell-card {
+  text-align: center;
+  width: 100%;
+  background-color: #ef7d8e;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
 
 :root {
   font-synthesis: none;

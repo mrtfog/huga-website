@@ -19,28 +19,44 @@ body {
   background-color: var(--main-bg-color);
 }
 
-/* MENU */ 
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* MENU */
 .menu-scroll {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   transition: 0.1s ease-in-out;
 }
 
-.btn, .btn-no {
+.btn,
+.btn-no {
   text-align: center;
   z-index: 0;
   width: 50%;
   padding: 10px;
   color: var(--main-bg-color);
   background-color: var(--pink-color);
+  cursor: not-allowed;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+  }
 }
 
 .btn-no {
   filter: grayscale(90%);
 }
-
 
 /* RESPONSIVE DESIGN */
 
@@ -127,11 +143,11 @@ body {
     flex-direction: row;
   }
 
-  .footer-container h2, h3 {
-    font-size: 1rem; 
+  .footer-container h2,
+  h3 {
+    font-size: 1rem;
   }
 }
-
 
 @media (min-width: 1400px) {
   /* MENU */
@@ -168,12 +184,6 @@ body {
   }
   .header-btn-container {
     flex-direction: row;
-  }
-
-  .btn {
-    width: 50% !important;
-    padding: 20px;
-    margin-bottom: 0%;
   }
 
   /* COURSES */
@@ -257,8 +267,9 @@ body {
     width: 40%;
   }
 
-  .footer-container h2, h3 {
-    font-size: 1rem; 
+  .footer-container h2,
+  h3 {
+    font-size: 1rem;
   }
   .contact h2 {
     font-size: 5rem;

@@ -1,39 +1,43 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ProjectItem } from "../common/ProjectItem";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Projects = ()  => {
+const Projects = ({ sectionData }) => {
+  const [filteredPortfolio, setFilteredPortfolio] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const categories = [
-    "Figurines",
-    "Estampas",
-    "Ilustraciones",
-    "Fichas tecnicas",
+    "figurines",
+    "estampas",
+    "ilustraciones",
+    "fichas técnicas",
   ];
-  const [data, setData] = useState([]);
 
-  async function requestDataProjects(event = null) {
-    try {
-      const request = await fetch("DB/projects.json");
-      const responseJson = await request.json();
-      if (event != null) {
-        const responseCategory = responseJson.filter(
-          (project) => project.category == event.target.id
-        );
-        setData(responseCategory);
+  function requestDataProjects(event = null) {
+    const splicedPortfolio = [...sectionData.portfolio];
+
+    if (event != null) {
+      if (event.target.id === selectedCategory) {
+        setSelectedCategory("");
+        setFilteredPortfolio(splicedPortfolio);
       } else {
-        setData(responseJson.splice(1, 12));
+        setSelectedCategory(event.target.id);
+        const responseCategory = sectionData.portfolio?.filter(
+          (project) => project.type === event.target.id
+        );
+        setFilteredPortfolio(responseCategory);
       }
-    } catch (err) {
-      console.log(err);
+    } else {
+      setFilteredPortfolio(splicedPortfolio);
     }
   }
 
   useEffect(() => {
     requestDataProjects();
-  }, []);
+  }, [sectionData]);
 
   return (
-  
-    <section className="projects" id = "Proyectos">
+    <section className="projects" id="Proyectos">
       <h2>
         <span>Conocé mis</span> proyectos!
       </h2>
@@ -43,7 +47,9 @@ const Projects = ()  => {
             return (
               <button
                 id={category}
-                className="categories-btn"
+                className={`categories-btn ${
+                  category === selectedCategory ? "btn-selected" : ""
+                }`}
                 onClick={(event) => requestDataProjects(event)}
                 key={category}
               >
@@ -52,15 +58,18 @@ const Projects = ()  => {
             );
           })}
         </div>
-        <div className="projects-box">
-          {data.map((child) => {
-            return <ProjectItem data={child} key = {child.id}/>;
-          })}
-        </div>
+        <motion.div layout className="projects-box">
+          <AnimatePresence>
+            {filteredPortfolio && filteredPortfolio.length
+              ? filteredPortfolio.map((child) => {
+                  return <ProjectItem data={child} key={child._id} />;
+                })
+              : ""}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
-    
   );
-}
+};
 
-export default Projects
+export default Projects;

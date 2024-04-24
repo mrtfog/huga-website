@@ -1,11 +1,15 @@
-import React from "react";
-import { serviceLinks } from "../../assets/img/services/index"
-import servicesAvatar from "../../assets/img/avatars/servicios.png";
+import { ServicesAvatar } from "../../lib/images";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const Services = () => {
+const Services = ({ sectionData }) => {
   return (
-    <section className="services" id = "Servicios">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <section className="services" id="Servicios">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        className="absolute top-0 left-0"
+      >
         <path
           fill="#AB7994"
           fillOpacity="1"
@@ -16,15 +20,42 @@ const Services = () => {
         <div className="flex-box">
           <h2>Servicios</h2>
           <div className="services-grid">
-            {serviceLinks.map((service, i) => {
-              return <a key = {i} href = {service.url}><img src={service.image} alt = {"service image"}></img></a>;
-            })}
+            {sectionData && sectionData.services && sectionData.services.length
+              ? sectionData.services.map((service, i) => {
+                  return (
+                    <motion.article
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="service-card"
+                    >
+                      <Link to={`servicios/${service._id}`}>
+                        {service.serviceIntroducingVideo && (
+                          <video loop autoPlay muted playsInline preload="auto">
+                            <source
+                              src={service.serviceIntroducingVideo}
+                              type="video/mp4"
+                            />
+                          </video>
+                        )}
+                        <img src={service.image} alt={"service image"} />
+                      </Link>
+                    </motion.article>
+                  );
+                })
+              : ""}
           </div>
         </div>
-        <img className = 'services-avatar' src={servicesAvatar} alt = {"service avatar"}></img>
+        <img
+          className="services-avatar"
+          src={ServicesAvatar}
+          alt={"service avatar"}
+        ></img>
       </div>
     </section>
   );
 };
 
-export default Services
+export default Services;

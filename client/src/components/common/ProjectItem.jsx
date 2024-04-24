@@ -1,9 +1,15 @@
-import React from "react";
+import { motion } from "framer-motion";
 
-export const ProjectItem = (props) => {
+export const ProjectItem = ({ data }) => {
   return (
-    <article className="project-item">
-      <img src={props.data.imageUrl} alt = {""}></img>
-    </article>
+    <motion.article
+      layout
+      className="project-item"
+      animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      exit={{ opacity: 0 }}
+    >
+      <img src={data.image} alt={data.type}></img>
+    </motion.article>
   );
 };
