@@ -28,8 +28,8 @@ export default {
   fields: [
     orderRankField({type: 'portfolio'}),
     {
-      name: 'socialMedia',
-      title: 'Red social',
+      name: 'type',
+      title: 'Tipo',
       type: 'string',
       options: {
         list: [FIGURINES, ESTAMPAS, ILUSTRACIONES, FICHASTECNICAS],
@@ -43,7 +43,7 @@ export default {
     {
       name: 'description',
       title: 'Descripción',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'image',
@@ -57,9 +57,9 @@ export default {
       type: 'number',
       description: 'Selecciona el año',
       options: {
-        list: [...Array(new Date().getFullYear() - 1899).keys()].map((i) => ({
-          title: `${i + 1900}`,
-          value: i + 1900,
+        list: [...Array(new Date().getFullYear() - 2010).keys()].map((i) => ({
+          title: `${i + 2011}`,
+          value: i + 2011,
         })),
         layout: 'dropdown',
       },
@@ -67,7 +67,7 @@ export default {
     {
       name: 'month',
       title: 'Mes de Lanzamiento del Proyecto',
-      type: 'text',
+      type: 'string',
       options: {
         list: months,
       },
