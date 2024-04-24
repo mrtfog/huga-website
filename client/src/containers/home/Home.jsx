@@ -40,7 +40,7 @@ const Home = () => {
             <Fragment key={section.type}>
               {section.type === "hero" && <Header sectionData={section} />}
               {section.type === "courses" && <Courses sectionData={section} />}
-              {section.type === "projects" && (
+              {section.type === "portfolio" && (
                 <Projects sectionData={section} />
               )}
               {section.type === "services" && (
