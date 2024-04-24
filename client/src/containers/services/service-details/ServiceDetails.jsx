@@ -55,7 +55,7 @@ const ServiceDetails = () => {
                 <Typography as="h1" variant="h1" color="black">
                   {currentService?.title}
                 </Typography>
-                <Typography as="p" variant="small" color="darkGray">
+                <Typography as="p" variant="medium" color="darkGray">
                   {currentService?.description}
                 </Typography>
               </div>
