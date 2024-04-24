@@ -51,35 +51,37 @@ const ServiceDetails = () => {
       ) : (
         <>
           <section className="service-hero">
-            <div className="service-hero__description">
-              <Typography as="h1" variant="h1" color="black">
-                {currentService?.title}
-              </Typography>
-              <Typography as="p" variant="small" color="darkGray">
-                {currentService?.description}
-              </Typography>
-            </div>
-            <div className="service-hero__video">
-              {currentService && currentService.serviceIntroducingVideo ? (
-                <video
-                  loop
-                  poster={currentService?.image}
-                  controls
-                  preload="auto"
-                >
-                  <source
-                    src={currentService?.courseIntroducingVideo}
-                    type="video/mp4"
-                  />
-                </video>
-              ) : (
-                <picture>
-                  <img
-                    src={currentService?.image}
-                    alt={`Imagen del curso "${currentService?.title}"`}
-                  />
-                </picture>
-              )}
+            <div className="service-hero__inner">
+              <div className="service-hero__description">
+                <Typography as="h1" variant="h1" color="black">
+                  {currentService?.title}
+                </Typography>
+                <Typography as="p" variant="small" color="darkGray">
+                  {currentService?.description}
+                </Typography>
+              </div>
+              <div className="service-hero__video">
+                {currentService && currentService.serviceIntroducingVideo ? (
+                  <video
+                    loop
+                    poster={currentService?.image}
+                    controls
+                    preload="auto"
+                  >
+                    <source
+                      src={currentService?.courseIntroducingVideo}
+                      type="video/mp4"
+                    />
+                  </video>
+                ) : (
+                  <picture>
+                    <img
+                      src={currentService?.image}
+                      alt={`Imagen del curso "${currentService?.title}"`}
+                    />
+                  </picture>
+                )}
+              </div>
             </div>
           </section>
           <section className="service-work_modality">
@@ -91,7 +93,7 @@ const ServiceDetails = () => {
               <div className="service-work_modality__wrapper">
                 {currentService && currentService.modules.length
                   ? currentService.modules.map((modality) => (
-                      <article key={modality._id} className="service__card">
+                      <article key={modality._key} className="service__card">
                         <Typography as="h3" variant="h3" color="black">
                           {modality.title}
                         </Typography>
@@ -113,7 +115,7 @@ const ServiceDetails = () => {
               <ul role="list" className="gap-5 flex flex-col py-10">
                 {currentService && currentService.benefits
                   ? currentService.benefits.map((benefit) => (
-                      <article className="service__card" key={benefit._id}>
+                      <article className="service__card" key={benefit._key}>
                         <Typography as="h3" variant="h3" color="black">
                           {benefit.title}
                         </Typography>
