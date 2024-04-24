@@ -58,12 +58,11 @@ p,
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .header-btn-container .btn {
   cursor: pointer;
-  margin-right: 2%;
-  margin-bottom: 10%;
 }
 
 .header-btn-container .btn:nth-child(even) {
@@ -81,4 +80,21 @@ p,
 
 .personal-img {
   width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .bottom-panel {
+    font-size: 2.5rem;
+    bottom: 0;
+    padding: 0.5rem;
+    color: #fff;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    background-color: var(--pink-color);
+  }
+
+  .header-intro p {
+    font-size: 0.8rem;
+    width: 100%;
+  }
 }

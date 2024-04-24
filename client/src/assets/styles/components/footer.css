@@ -11,8 +11,8 @@ footer {
   justify-content: space-around;
 }
 
-.footer-container h2, h3{
+.footer-container p {
   font-weight: 300;
   color: rgba(255, 255, 255, 90%);
-  font-size: 0.6rem;
+  font-size: 1.1rem;
 }
