@@ -68,7 +68,7 @@ const ServiceDetails = () => {
                     preload="auto"
                   >
                     <source
-                      src={currentService?.courseIntroducingVideo}
+                      src={currentService.serviceIntroducingVideo}
                       type="video/mp4"
                     />
                   </video>
@@ -90,7 +90,7 @@ const ServiceDetails = () => {
               </Typography>
 
               <div className="service-work_modality__wrapper">
-                {currentService && currentService.modules.length
+                {currentService && currentService.modules
                   ? currentService.modules.map((modality) => (
                       <article key={modality._key} className="service__card">
                         <Typography as="h3" variant="h3" color="black">
