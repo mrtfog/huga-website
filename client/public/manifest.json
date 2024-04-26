@@ -1,0 +1,18 @@
+{
+  "lang": "es",
+  "dir": "ltr",
+  "name": "Hüga | Estudio de diseño de gráfico",
+  "short_name": "Hüga",
+  "description": "Estudio de diseño integral, enfocado en creación de marcas únicas. Servicios de diseño de indumentaria/gráfico, cursos, ilustraciones, branding, packaging.",
+  "icons": [
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://www.hugadesignstudio.com",
+  "display": "standalone",
+  "background_color": "#F6EEEA",
+  "theme_color": "#F6EEEA"
+}
