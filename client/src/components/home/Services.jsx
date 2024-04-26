@@ -33,7 +33,15 @@ const Services = ({ sectionData }) => {
                     >
                       <Link to={`servicios/${service._id}`}>
                         {service.serviceIntroducingVideo && (
-                          <video loop autoPlay muted playsInline preload="auto">
+                          <video
+                            width="250"
+                            height="150"
+                            loop
+                            autoPlay
+                            muted
+                            playsInline
+                            preload="auto"
+                          >
                             <source
                               src={service.serviceIntroducingVideo}
                               type="video/mp4"

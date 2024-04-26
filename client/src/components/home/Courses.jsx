@@ -132,10 +132,10 @@ const Courses = ({ sectionData }) => {
             </Swiper>
 
             <div className="text-center mt-4 flex items-center justify-center gap-4 py-4">
-              <button className="swiper-button-prev">
+              <button aria-label="Previous Slide Button" className="swiper-button-prev">
                 <BsArrowLeft size={44} className="text-white" />
               </button>
-              <button className="swiper-button-next">
+              <button aria-label="Next Slide Button" className="swiper-button-next">
                 <BsArrowRight size={44} className="text-white" />
               </button>
             </div>
