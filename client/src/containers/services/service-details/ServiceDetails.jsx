@@ -133,8 +133,11 @@ const ServiceDetails = () => {
                 >
                   {currentService && currentService.modules
                     ? currentService.modules.map((modality) => (
-                        <SwiperSlide className="flex h-96" key={modality._key}>
-                          <article className="service__card">
+                        <SwiperSlide
+                          className="flex h-[450px] overflow-hidden"
+                          key={modality._key}
+                        >
+                          <article className="service__card overflow-y-scroll">
                             <Typography
                               as="h3"
                               variant="h3"
