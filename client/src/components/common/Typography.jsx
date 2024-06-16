@@ -13,8 +13,8 @@ const variantClasses = {
 const colorClasses = {
   white: "text-[#F6EEEA]",
   black: "text-[#242526]",
-  lightGray: "text-[#F6EEEA]/90",
-  darkGray: "text-[#242526]/90",
+  lightGray: "text-[#F6EEEA]/80",
+  darkGray: "text-[#242526]/80",
   brown: "text-[#813816]",
 };
 

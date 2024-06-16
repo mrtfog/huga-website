@@ -52,10 +52,10 @@ const ServiceDetails = () => {
           <section className="service-hero">
             <div className="service-hero__inner">
               <div className="service-hero__description">
-                <Typography as="h1" variant="h1" color="black">
+                <Typography as="h1" variant="h1" color="white">
                   {currentService?.title}
                 </Typography>
-                <Typography as="p" variant="medium" color="darkGray">
+                <Typography as="p" variant="medium" color="lightGray">
                   {currentService?.description}
                 </Typography>
               </div>
