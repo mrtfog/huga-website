@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom";
 import { useSanity } from "../../../hooks/useSanity";
 import { Helmet } from "react-helmet";
 import { Typography } from "../../../components";
-import { BsLink as LinkIcon } from "react-icons/bs";
+import { BsArrowLeft, BsArrowRight, BsLink as LinkIcon } from "react-icons/bs";
 import { PersonalAvatar } from "../../../lib/images";
 import "../../../assets/styles/components/services/ServiceDetails.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const ServiceDetails = () => {
-  window.scrollTo(0, 0);
+  // window.scrollTo(0, 0);
   const [currentService, setCurrentService] = useState(null);
   const [serviceNotFound, setServiceNotFound] = useState(false);
   const { id } = useParams();
@@ -90,18 +94,78 @@ const ServiceDetails = () => {
               </Typography>
 
               <div className="service-work_modality__wrapper">
-                {currentService && currentService.modules
-                  ? currentService.modules.map((modality) => (
-                      <article key={modality._key} className="service__card">
-                        <Typography as="h3" variant="h3" color="black">
-                          {modality.title}
-                        </Typography>
-                        <Typography as="p" variant="p" color="darkGray">
-                          {modality.description}
-                        </Typography>
-                      </article>
-                    ))
-                  : ""}
+                <Swiper
+                  slidesPerView={1}
+                  centeredSlides={false}
+                  spaceBetween={20}
+                  grabCursor={true}
+                  navigation={{
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  modules={[Navigation]}
+                  className="w-full px-2 py-6"
+                  breakpoints={{
+                    1921: {
+                      slidesPerView: 5,
+                      spaceBetween: 20,
+                    },
+                    1920: {
+                      slidesPerView: 4,
+                      spaceBetween: 20,
+                    },
+                    1200: {
+                      slidesPerView: 3,
+                      spaceBetween: 20,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    },
+                    0: {
+                      slidesPerView: 1,
+                      spaceBetween: 10,
+                    },
+                  }}
+                >
+                  {currentService && currentService.modules
+                    ? currentService.modules.map((modality) => (
+                        <SwiperSlide className="flex h-96" key={modality._key}>
+                          <article className="service__card">
+                            <Typography
+                              as="h3"
+                              variant="h3"
+                              color="black"
+                              className="font-medium"
+                            >
+                              {modality.title}
+                            </Typography>
+                            <Typography as="p" variant="p" color="darkGray">
+                              {modality.description}
+                            </Typography>
+                          </article>
+                        </SwiperSlide>
+                      ))
+                    : ""}
+                </Swiper>
+
+                <div className="text-center flex items-center justify-center gap-4">
+                  <button
+                    aria-label="Botón Anterior"
+                    className="swiper-button-prev"
+                  >
+                    <BsArrowLeft size={44} className="text-white" />
+                  </button>
+                  <button
+                    aria-label="Botón Siguiente"
+                    className="swiper-button-next"
+                  >
+                    <BsArrowRight size={44} className="text-white" />
+                  </button>
+                </div>
               </div>
             </div>
           </section>
