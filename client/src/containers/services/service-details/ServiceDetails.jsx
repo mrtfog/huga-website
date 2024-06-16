@@ -5,9 +5,10 @@ import { Helmet } from "react-helmet";
 import { Typography } from "../../../components";
 import { BsArrowLeft, BsArrowRight, BsLink as LinkIcon } from "react-icons/bs";
 import { PersonalAvatar } from "../../../lib/images";
-import "../../../assets/styles/components/services/ServiceDetails.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
+import "../../../assets/styles/components/services/ServiceDetails.css";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -93,7 +94,13 @@ const ServiceDetails = () => {
                 Nuestras Modalidades de Trabajo
               </Typography>
 
-              <div className="service-work_modality__wrapper">
+              <motion.div
+                className="service-work_modality__wrapper"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
                 <Swiper
                   slidesPerView={1}
                   centeredSlides={false}
@@ -169,7 +176,7 @@ const ServiceDetails = () => {
                     <BsArrowRight size={44} className="text-white" />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </section>
           <section className="service-benefits">
@@ -180,15 +187,23 @@ const ServiceDetails = () => {
 
               <ul role="list" className="gap-5 flex flex-col py-10">
                 {currentService && currentService.benefits
-                  ? currentService.benefits.map((benefit) => (
-                      <article className="service__card" key={benefit._key}>
-                        <Typography as="h3" variant="h3" color="black">
-                          {benefit.title}
-                        </Typography>
-                        <Typography as="p" variant="p" color="darkGray">
-                          {benefit.description}
-                        </Typography>
-                      </article>
+                  ? currentService.benefits.map((benefit, benefitIdx) => (
+                      <motion.li
+                        key={benefit._key}
+                        initial={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.5, delay: benefitIdx * 0.1 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                      >
+                        <article className="service__card">
+                          <Typography as="h3" variant="h3" color="black">
+                            {benefit.title}
+                          </Typography>
+                          <Typography as="p" variant="p" color="darkGray">
+                            {benefit.description}
+                          </Typography>
+                        </article>
+                      </motion.li>
                     ))
                   : ""}
               </ul>
@@ -196,7 +211,13 @@ const ServiceDetails = () => {
           </section>
           <section className="service-contact">
             <div className="service-contact__inner">
-              <article className="service__card">
+              <motion.article
+                className="service__card"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
                 <Typography as="h3" variant="h3" color="black">
                   ¡Reserva una Entrevista!
                 </Typography>
@@ -217,9 +238,15 @@ const ServiceDetails = () => {
                   {" "}
                   Reserva en Calendly <LinkIcon size={24} />
                 </a>
-              </article>
+              </motion.article>
 
-              <article className="service__card">
+              <motion.article
+                className="service__card"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
                 <Typography as="h3" variant="h3" color="black">
                   ¿Tenés Alguna Consulta?
                 </Typography>
@@ -239,9 +266,15 @@ const ServiceDetails = () => {
                   {" "}
                   Contactame por Email <LinkIcon size={24} />
                 </a>
-              </article>
+              </motion.article>
 
-              <div className="farewell-card">
+              <motion.div
+                className="farewell-card"
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
                 <Typography as="h3" variant="h3" color="white">
                   ¡Esperamos verte pronto!
                 </Typography>
@@ -253,7 +286,7 @@ const ServiceDetails = () => {
                     className="w-3/4 h-auto object-contain"
                   />
                 </picture>
-              </div>
+              </motion.div>
             </div>
           </section>
         </>
