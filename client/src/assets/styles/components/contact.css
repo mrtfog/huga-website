@@ -26,7 +26,7 @@
 
 .contact h2 {
   font-size: 4rem;
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
   padding-bottom: 30px;
 }
 
@@ -48,12 +48,12 @@ input {
   border-radius: 20px;
   outline: none;
   font-size: 1rem;
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
   background-color: rgba(255, 255, 255, 20%);
 }
 
 .contact form input::placeholder {
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
 }
 
 .contact form textarea {
@@ -62,14 +62,14 @@ input {
 }
 
 .contact form textarea::placeholder {
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
 }
 
 .contact .contact-btn {
   border: none;
   width: 60%;
   padding: 20px;
-  background-color: var(--main-bg-color);
+  background-color: var(--text-white-color);
   color: var(--pink-color);
   border-radius: 10px;
   cursor: pointer;

@@ -39,7 +39,7 @@
   width: 100%;
   z-index: 1;
   font-size: 2rem;
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
 }
 
 #courses-avatar {

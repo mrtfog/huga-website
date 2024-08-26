@@ -8,14 +8,14 @@
   justify-content: center;
 }
 
-.categories-btn{
+.categories-btn {
   padding: 20px;
   border-radius: 20px;
   font-weight: 500;
   margin-right: 2%;
 }
 
-.btn-selected{
+.btn-selected {
   color: var(--pink-color) !important;
   background-color: var(--main-bg-color) !important;
 }
@@ -30,7 +30,7 @@
 }
 
 .projects > h2 span {
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
 }
 
 .projects-container {
@@ -64,7 +64,7 @@
 .projects-box {
   width: 100%;
   margin: auto;
-  padding: 2.5rem 0 .3rem 0;
+  padding: 2.5rem 0 0.3rem 0;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;

@@ -1,8 +1,14 @@
 :root {
-    /* COLORS */
-    --main-bg-color: #F6EEEA;
-    --text-color: #813816;
-    --orange-color: #ECC03C;
-    --pink-color: #D57C8C;
-    --violet-color: #AB7994;
+  /* TEXT COLORS */
+  --text-white-color: #fefbec;
+  --text-light-gray-color: #faf2cb;
+  --text-black-color: #401d08;
+  --text-dark-gray-color: #884518;
+
+  /* COLORS */
+  --main-bg-color: #d3c6d3;
+  --text-color: #9d2c41;
+  --orange-color: #ecc03c;
+  --pink-color: #d57c8c;
+  --violet-color: #650666;
 }

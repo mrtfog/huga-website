@@ -11,10 +11,10 @@ const variantClasses = {
 };
 
 const colorClasses = {
-  white: "text-[#F6EEEA]",
-  black: "text-[#242526]",
-  lightGray: "text-[#F6EEEA]/80",
-  darkGray: "text-[#242526]/80",
+  white: "text-[#f6f6f6]",
+  black: "text-[#0a0a0a]",
+  lightGray: "text-[#e5e5e5]",
+  darkGray: "text-[#363738]",
   brown: "text-[#813816]",
 };
 
@@ -29,22 +29,11 @@ const Typography = ({
   const colorClass = colorClasses[color] || "";
   const classes = `${variantClass} ${colorClass} ${className}`.trim();
 
-  const content =
-    typeof props.children === "string"
-      ? props.children.split("\n").map((line, index, array) => (
-          <React.Fragment key={index}>
-            {React.createElement(Tag, { className: classes, ...props }, line)}
-            {index < array.length - 1 && <br />}{" "}
-            {/* Agrega <br /> entre líneas excepto después de la última */}
-          </React.Fragment>
-        ))
-      : React.createElement(
-          Tag,
-          { className: classes, ...props },
-          props.children
-        );
-
-  return <>{content}</>;
+  return React.createElement(
+    Tag,
+    { className: classes, ...props },
+    props.children
+  );
 };
 
 export default Typography;

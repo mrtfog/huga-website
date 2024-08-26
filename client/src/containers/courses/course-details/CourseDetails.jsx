@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSanity } from "../../../hooks/useSanity";
-import Typography from "../../../components/common/Typography";
+import { Typography } from "../../../components";
 import { BsCheck } from "react-icons/bs";
 import PrincingCard from "./components/PrincingCard";
 import Timeline from "./components/Timeline";
@@ -56,7 +56,7 @@ const CourseDetails = () => {
               <Typography as="h1" variant="h1" color="black">
                 {currentCourse?.title}
               </Typography>
-              <Typography as="p" variant="small" color="darkGray">
+              <Typography as="p" variant="medium" color="darkGray">
                 {currentCourse?.description}
               </Typography>
             </div>
@@ -90,7 +90,7 @@ const CourseDetails = () => {
               className="absolute top-0 lg:-top-24 left-0 z-0 pointer-events-none"
             >
               <path
-                fill="#F6EEEA"
+                fill="#d3c6d3"
                 fillOpacity="1"
                 d="M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,218.7C672,235,768,213,864,176C960,139,1056,85,1152,90.7C1248,96,1344,160,1392,192L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
               ></path>
@@ -98,10 +98,11 @@ const CourseDetails = () => {
 
             <div className="course-topics__wrapper">
               <div className="course-topics__description">
-                <Typography as="h2" variant="h2" color="white">
+                <Typography as="h2" variant="h2" color="white"></Typography>
+                <Typography as="h2" variant="h1" color="white">
                   Tópicos
                 </Typography>
-                <Typography as="p" variant="small" color="lightGray">
+                <Typography as="p" variant="medium" color="lightGray">
                   {currentCourse?.topics}
                 </Typography>
               </div>
@@ -131,7 +132,7 @@ const CourseDetails = () => {
                 <Typography as="h2" variant="h2" color="white">
                   Objetivos
                 </Typography>
-                <Typography as="p" variant="small" color="lightGray">
+                <Typography as="p" variant="medium" color="lightGray">
                   {currentCourse?.goals}
                 </Typography>
               </div>
@@ -140,7 +141,7 @@ const CourseDetails = () => {
                 <Typography as="h2" variant="h2" color="white">
                   Público Objetivo
                 </Typography>
-                <Typography as="p" variant="small" color="lightGray">
+                <Typography as="p" variant="medium" color="lightGray">
                   {currentCourse?.targetAudience}
                 </Typography>
               </div>
@@ -165,11 +166,11 @@ const CourseDetails = () => {
                   <Typography as="h2" variant="h2" color="black">
                     Nuestras Modalidades de Cursada
                   </Typography>
-                  <Typography as="p" variant="small" color="darkGray">
+                  <Typography as="p" variant="medium" color="darkGray">
                     Elige tu cursada con la modalidad que mejor se ajuste a tus
                     necesidades.
                   </Typography>
-                  <Typography as="p" variant="small" color="darkGray">
+                  <Typography as="p" variant="medium" color="darkGray">
                     La matrícula es un pago único a realizar en cada inicio de
                     año. Es equivalente a la inscripción para todos los cursos
                     que el alumno decida realizar durante el mismo.
@@ -187,19 +188,19 @@ const CourseDetails = () => {
                     >
                       <li className="flex items-start gap-2">
                         <BsCheck className="mt-1" size={20} />
-                        <Typography as="p" variant="small" color="darkGray">
+                        <Typography as="p" variant="medium" color="darkGray">
                           Grabación de las clases y consultas en vivo
                         </Typography>
                       </li>
                       <li className="flex items-start gap-2 mt-2">
                         <BsCheck className="mt-1" size={20} />
-                        <Typography as="p" variant="small" color="darkGray">
+                        <Typography as="p" variant="medium" color="darkGray">
                           Preentregas y Proyecto Final
                         </Typography>
                       </li>
                       <li className="flex items-start gap-2 mt-2">
                         <BsCheck className="mt-1" size={20} />
-                        <Typography as="p" variant="small" color="darkGray">
+                        <Typography as="p" variant="medium" color="darkGray">
                           Archivos adjuntos disponibles
                         </Typography>
                       </li>
@@ -244,7 +245,7 @@ const CourseDetails = () => {
                   <Typography as="h2" variant="h2" color="black">
                     Porque nos interesa tu progreso
                   </Typography>
-                  <Typography as="p" variant="small" color="darkGray">
+                  <Typography as="p" variant="medium" color="darkGray">
                     Todos nuestros cursos finalizan con un TP Final integrador a
                     través del cuál el alumno podrá evaluar sus habilidades
                     adquiridas y recibir una certificación de cursada y
@@ -255,7 +256,7 @@ const CourseDetails = () => {
                     laboral o el desarrollo de trabajos independientes, así como
                     también la creación de sus propias marcas.
                   </Typography>
-                  <Typography as="p" variant="small" color="darkGray">
+                  <Typography as="p" variant="medium" color="darkGray">
                     ¡Alentamos a que todos aquellos que se interesen por vivir
                     de la moda puedan hacerlo y crear su propio camino
                     profesional!

@@ -13,7 +13,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const ServiceDetails = () => {
-  // window.scrollTo(0, 0);
   const [currentService, setCurrentService] = useState(null);
   const [serviceNotFound, setServiceNotFound] = useState(false);
   const { id } = useParams();
@@ -33,6 +32,10 @@ const ServiceDetails = () => {
       getServices();
     }
   }, [id, services, getServices]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

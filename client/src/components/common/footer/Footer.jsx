@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-container">
-        <p>Huga-Website all rights reserved © 2024</p>
+        <p>Hüga © 2024. Todos los derechos reservados. </p>
       </div>
     </footer>
   );

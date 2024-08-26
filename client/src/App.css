@@ -40,7 +40,7 @@ body {
   z-index: 0;
   width: 50%;
   padding: 10px;
-  color: var(--main-bg-color);
+  color: var(--text-white-color);
   background-color: var(--pink-color);
   cursor: not-allowed;
   border: none;
@@ -76,12 +76,8 @@ body {
   .header-img {
     width: 25%;
   }
-  .header-intro {
-    width: 60%;
-  }
   .header-intro h1 {
     font-size: 4rem;
-    text-align: center;
   }
   .header-intro p {
     font-size: 1rem;
@@ -166,10 +162,6 @@ body {
   }
 
   /* HEADER */
-  .header {
-    flex-direction: row;
-    justify-content: space-around;
-  }
   .header-img {
     width: 25%;
   }

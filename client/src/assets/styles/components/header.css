@@ -1,19 +1,19 @@
 /* HEADER STYLES */
 .header {
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .bottom-panel {
-  cursor: pointer;
   position: absolute;
-  display: flex;
-  font-size: 3.5rem;
   bottom: 0;
   padding: 1rem;
+  cursor: pointer;
+  font-size: 3.5rem;
   color: #fff;
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
@@ -93,8 +93,23 @@ p,
     background-color: var(--pink-color);
   }
 
+  .header-intro {
+    width: 90%;
+  }
+
+  .header-intro h1 {
+    text-align: center;
+  }
+
   .header-intro p {
     font-size: 0.8rem;
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
