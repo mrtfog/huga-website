@@ -52,7 +52,7 @@ const Courses = ({ sectionData }) => {
                 clickable: true,
               }}
               modules={[Navigation]}
-              className="w-full px-2 py-6"
+              className="w-full px-2 py-6 min-h-max"
               breakpoints={{
                 1921: {
                   slidesPerView: 5,
@@ -132,10 +132,16 @@ const Courses = ({ sectionData }) => {
             </Swiper>
 
             <div className="text-center mt-4 flex items-center justify-center gap-4 py-4">
-              <button aria-label="Previous Slide Button" className="swiper-button-prev">
+              <button
+                aria-label="Previous Slide Button"
+                className="swiper-button-prev"
+              >
                 <BsArrowLeft size={44} className="text-white" />
               </button>
-              <button aria-label="Next Slide Button" className="swiper-button-next">
+              <button
+                aria-label="Next Slide Button"
+                className="swiper-button-next"
+              >
                 <BsArrowRight size={44} className="text-white" />
               </button>
             </div>

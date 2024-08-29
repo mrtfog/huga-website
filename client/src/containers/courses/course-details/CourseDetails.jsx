@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSanity } from "../../../hooks/useSanity";
-import { Typography } from "../../../components";
+import { Typography, VerticalTimeline } from "../../../components";
 import { BsCheck } from "react-icons/bs";
 import PrincingCard from "./components/PrincingCard";
-import Timeline from "./components/Timeline";
 import { PersonalAvatar } from "../../../lib/images";
 import { Helmet } from "react-helmet";
 import "../../../assets/styles/components/courses/CourseDetail.css";
@@ -110,7 +109,11 @@ const CourseDetails = () => {
 
             <div className="course-topics__timeline">
               <div className="course-topics__timeline_wrapper">
-                <Timeline currentCourse={currentCourse} />
+                {currentCourse && currentCourse.modules ? (
+                  <VerticalTimeline items={currentCourse.modules} />
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </section>

@@ -6,6 +6,7 @@ import {
   ServerError,
   InitialTransition,
   Loader,
+  SocialMediaContainer,
   Transition,
 } from "./components";
 import { useSanity } from "./hooks/useSanity";
@@ -44,6 +45,7 @@ function App() {
           ) : (
             <>
               <Menu />
+              <SocialMediaContainer />
               <main className="body-container">
                 <AnimatePresence mode="wait">
                   <motion.div key={location.pathname} className="h-full">

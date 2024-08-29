@@ -1,7 +1,7 @@
 @import url("../../abstracts/variables.css");
 
 .course-hero {
-  min-height: 100vh;
+  min-height: 80vh;
   max-height: max-content;
   z-index: 1;
   margin-inline: auto;
