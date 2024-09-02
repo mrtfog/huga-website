@@ -1,4 +1,5 @@
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+import slugify from 'slugify'
 
 export default {
   name: 'services',
@@ -7,6 +8,29 @@ export default {
   orderings: [orderRankOrdering],
   fields: [
     orderRankField({type: 'services'}),
+    {
+      name: 'available',
+      title: 'Disponible',
+      type: 'boolean',
+      options: {
+        layout: 'radio',
+        list: [
+          {title: 'Sí', value: true},
+          {title: 'No', value: false},
+        ],
+      },
+      validation: (Rule) => Rule.required().error('La disponibilidade es obligatoria'),
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        slugify: (input) => slugify(input, {lower: true, strict: true}),
+      },
+      validation: (Rule) => Rule.required().error('El Slug es obligatorio'),
+    },
     {
       name: 'image',
       title: 'Imágen',

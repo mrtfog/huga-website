@@ -1,4 +1,5 @@
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
+import slugify from 'slugify'
 
 const months = [
   'Enero',
@@ -33,6 +34,17 @@ export default {
           {title: 'No', value: false},
         ],
       },
+      validation: (Rule) => Rule.required().error('La disponibilidad es obligatoria'),
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        slugify: (input) => slugify(input, {lower: true, strict: true}),
+      },
+      validation: (Rule) => Rule.required().error('El Slug es obligatorio'),
     },
     {
       name: 'image',
