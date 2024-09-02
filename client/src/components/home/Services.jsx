@@ -22,36 +22,39 @@ const Services = ({ sectionData }) => {
           <div className="services-grid">
             {sectionData && sectionData.services && sectionData.services.length
               ? sectionData.services.map((service, i) => {
-                  return (
-                    <motion.article
-                      key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      className="service-card"
-                    >
-                      <Link to={`servicios/${service._id}`}>
-                        {service.serviceIntroducingVideo && (
-                          <video
-                            width="250"
-                            height="150"
-                            loop
-                            autoPlay
-                            muted
-                            playsInline
-                            preload="auto"
-                          >
-                            <source
-                              src={service.serviceIntroducingVideo}
-                              type="video/mp4"
-                            />
-                          </video>
-                        )}
-                        <img src={service.image} alt={"service image"} />
-                      </Link>
-                    </motion.article>
-                  );
+                  if (service.available) {
+                    return (
+                      <motion.article
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.5, delay: i * 0.1 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="service-card"
+                      >
+                        <Link to={`servicios/${service.slug.current}`}>
+                          {service.serviceIntroducingVideo && (
+                            <video
+                              width="250"
+                              height="150"
+                              loop
+                              autoPlay
+                              muted
+                              playsInline
+                              preload="auto"
+                            >
+                              <source
+                                src={service.serviceIntroducingVideo}
+                                type="video/mp4"
+                              />
+                            </video>
+                          )}
+                          <img src={service.image} alt={"service image"} />
+                        </Link>
+                      </motion.article>
+                    );
+                  }
+                  return;
                 })
               : ""}
           </div>

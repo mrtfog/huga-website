@@ -24,8 +24,8 @@ import "./lib/helpers";
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/cursos/:id", element: <CourseDetail /> },
-  { path: "/servicios/:id", element: <ServiceDetail /> },
+  { path: "/cursos/:slug", element: <CourseDetail /> },
+  { path: "/servicios/:slug", element: <ServiceDetail /> },
   { path: "*", element: <NotFound /> },
 ];
 

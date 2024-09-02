@@ -77,57 +77,66 @@ const Courses = ({ sectionData }) => {
               }}
             >
               {sectionData.courses && sectionData.courses.length
-                ? sectionData.courses.map((course, index) => (
-                    <SwiperSlide key={index}>
-                      <article className="course-card">
-                        <div>
-                          <div className="course-image">
-                            <picture>
-                              <img src={course.imageUrl} alt={course.title} />
-                            </picture>
-                          </div>
+                ? sectionData.courses.map((course, index) => {
+                    if (course.available) {
+                      return (
+                        <SwiperSlide key={index}>
+                          <article className="course-card">
+                            <div>
+                              <div className="course-image">
+                                <picture>
+                                  <img
+                                    src={course.imageUrl}
+                                    alt={course.title}
+                                  />
+                                </picture>
+                              </div>
 
-                          <div className="course-title">
-                            <h3>{course.title}</h3>
-                            <div className="course-tags-container">
-                              <span className="course-tag">
-                                {course.duration}
-                              </span>
-                              <span className="course-duration">
-                                Inicio: {course.start}
-                              </span>
+                              <div className="course-title">
+                                <h3>{course.title}</h3>
+                                <div className="course-tags-container">
+                                  <span className="course-tag">
+                                    {course.duration}
+                                  </span>
+                                  <span className="course-duration">
+                                    Inicio: {course.start}
+                                  </span>
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                        </div>
 
-                        <div className="course-btn">
-                          {course.available ? (
-                            <Link
-                              name={course.id}
-                              to={`/cursos/${course._id}`}
-                              className={`btn ${
-                                course.available ? "btn" : "btn-no"
-                              }`}
-                              disabled={course.available ? false : true}
-                            >
-                              Ver Más
-                            </Link>
-                          ) : (
-                            <button
-                              name={course.id}
-                              // onClick={() => showModalCourse(course)}
-                              className={`btn ${
-                                course.available ? "btn" : "btn-no"
-                              }`}
-                              disabled={course.available ? false : true}
-                            >
-                              No Disponible
-                            </button>
-                          )}
-                        </div>
-                      </article>
-                    </SwiperSlide>
-                  ))
+                            <div className="course-btn">
+                              {course.available ? (
+                                <Link
+                                  name={course.id}
+                                  to={`/cursos/${course.slug.current}`}
+                                  className={`btn ${
+                                    course.available ? "btn" : "btn-no"
+                                  }`}
+                                  disabled={course.available ? false : true}
+                                >
+                                  Ver Más
+                                </Link>
+                              ) : (
+                                <button
+                                  name={course.id}
+                                  // onClick={() => showModalCourse(course)}
+                                  className={`btn ${
+                                    course.available ? "btn" : "btn-no"
+                                  }`}
+                                  disabled={course.available ? false : true}
+                                >
+                                  No Disponible
+                                </button>
+                              )}
+                            </div>
+                          </article>
+                        </SwiperSlide>
+                      );
+                    }
+
+                    return;
+                  })
                 : ""}
             </Swiper>
 
