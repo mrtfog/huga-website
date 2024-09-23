@@ -228,7 +228,7 @@ body {
   }
   .services-container .services-avatar {
     display: block;
-    transform: translateY(30%);
+    /* transform: translateY(30%); */
     z-index: -1;
     width: 100%;
   }
