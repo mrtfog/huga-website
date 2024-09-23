@@ -13,7 +13,9 @@
 }
 
 .menu-logo {
-  height: 60%;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
 }
 
 .menu-nav {

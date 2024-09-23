@@ -14,7 +14,9 @@ function Menu() {
 
   return (
     <header className="menu" id="menu">
-      <img className="menu-logo" src={logo} alt={"menu logo"}></img>
+      <Link className="h-12 w-max" to={"/"}>
+        <img className="menu-logo" src={logo} alt={"menu logo"}></img>
+      </Link>
       <nav className="hidden lg:flex">
         <ul className="menu-nav">
           {location?.pathname !== "/" ? (
@@ -46,10 +48,10 @@ function Menu() {
         </ul>
       </nav>
 
-      <div>
+      <div className="lg:hidden">
         <div
           onClick={() => setIsActive(!isActive)}
-          className="w-14 h-14 rounded-full bg-[#d57c8c] cursor-pointer flex items-center justify-center lg:hidden"
+          className="w-14 h-14 rounded-full bg-[#d57c8c] cursor-pointer flex items-center justify-center"
         >
           <div className="relative w-full">
             <div
