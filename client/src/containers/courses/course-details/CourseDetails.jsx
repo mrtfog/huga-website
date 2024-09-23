@@ -28,7 +28,7 @@ const CourseDetails = () => {
       .fetch(query, { slug: slug })
       .then((data) => {
         if (data) {
-          console.log("===data", data);
+          // console.log("===data", data);
           setCurrentCourse(data);
           setIsLoading(false);
         }
