@@ -16,6 +16,7 @@ const Home = lazy(() => import("./containers/home/Home"));
 const CourseDetail = lazy(() =>
   import("./containers/courses/course-details/CourseDetails")
 );
+const WorkPlanPage = lazy(() => import("./containers/work-plan/index"));
 const ServiceDetail = lazy(() =>
   import("./containers/services/service-details/ServiceDetails")
 );
@@ -25,6 +26,7 @@ import "./lib/helpers";
 const routes = [
   { path: "/", element: <Home /> },
   { path: "/cursos/:slug", element: <CourseDetail /> },
+  { path: "/planes-de-trabajo/:slug", element: <WorkPlanPage /> },
   { path: "/servicios/:slug", element: <ServiceDetail /> },
   { path: "*", element: <NotFound /> },
 ];
