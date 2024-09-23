@@ -23,9 +23,9 @@ const ProjectItem = ({ data }) => {
           <h3>{data?.title}</h3>
           <p>{data?.description}</p>
         </header>
-        <footer className="information__cta">
+        {/* <footer className="information__cta">
           <button>Ver caso de estudio</button>
-        </footer>
+        </footer> */}
       </div>
     </motion.article>
   );
