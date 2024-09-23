@@ -42,6 +42,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'shortDescription',
+      title: 'Descripción corta',
+      type: 'text',
+    },
+    {
       name: 'description',
       title: 'Descripción',
       type: 'text',
