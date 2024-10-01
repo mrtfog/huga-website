@@ -50,7 +50,7 @@ function App() {
               <SocialMediaContainer />
               <main className="body-container">
                 <AnimatePresence mode="wait">
-                  <motion.div key={location.pathname} className="h-full">
+                  <motion.div key={location.pathname} className="h-full]">
                     <Transition />
                     <Routes location={location} key={location.pathname}>
                       {routes.map((route, index) => (
