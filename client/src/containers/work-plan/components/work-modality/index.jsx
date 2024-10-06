@@ -11,17 +11,21 @@ const WorkModality = ({ plan }) => {
       <WaveSeparator color="#d57c8c" />
 
       <div className="mt-20">
-        <Typography as="h2" variant="h1" color="black">
+        <Typography as="h2" variant="h1" color="white">
           Modalidad de trabajo
         </Typography>
-        <Typography as="p" variant="medium" color="darkGray" className="mt-3">
+        <Typography as="p" variant="medium" color="lightGray" className="mt-3">
           {plan?.workModality}
         </Typography>
       </div>
 
       <div>
         {plan && plan.workPlan ? (
-          <VerticalTimeline items={plan.workPlan} />
+          <VerticalTimeline
+            leblColor="white"
+            textColor="lightGray"
+            items={plan.workPlan}
+          />
         ) : (
           ""
         )}

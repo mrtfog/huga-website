@@ -12,7 +12,7 @@ const Hero = ({ plan }) => {
           {plan?.shortDescription}
         </Typography>
       </div>
-      <div className="w-full lg:h-2/3 my-auto bg-[#d0ccd6] rounded-lg overflow-hidden transition-all duration-500 ease-out hover:rounded-[2.5rem]">
+      <div className="w-full lg:h-full my-auto bg-[#d0ccd6] rounded-lg overflow-hidden transition-all duration-500 ease-out hover:rounded-[2.5rem]">
         <picture>
           <img
             src={plan?.image}
