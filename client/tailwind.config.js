@@ -11,6 +11,12 @@ export default {
         xl: { min: "1200px" },
         xxl: { min: "1920px" },
       },
+      colors: {
+        "main-bg": "#d3c6d3",
+        "orange-color": "#ecc03c",
+        "pink-color": "#d57c8c",
+        "violet-color": "#650666",
+      },
     },
   },
   plugins: [],

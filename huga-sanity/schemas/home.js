@@ -7,6 +7,7 @@ const PORTFOLIO = 'portfolio'
 const COURSES = 'courses'
 const SERVICES = 'services'
 const CONTACT = 'contact'
+const WORKPLAN = 'work-plan'
 
 export default {
   name: 'home',
@@ -20,7 +21,7 @@ export default {
       title: 'Type',
       type: 'string',
       options: {
-        list: [HERO, ABOUT, PORTFOLIO, CONTACT, SERVICES, COURSES],
+        list: [HERO, ABOUT, PORTFOLIO, CONTACT, SERVICES, COURSES, WORKPLAN],
       },
     },
     {

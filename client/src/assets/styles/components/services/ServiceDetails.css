@@ -1,7 +1,7 @@
 @import url("../../abstracts/variables.css");
 
 .service-hero {
-  min-height: 100vh;
+  min-height: 80vh;
   max-height: max-content;
   background-color: var(--pink-color);
   display: grid;
@@ -89,9 +89,6 @@
 .service__card p {
   margin-top: 10px;
   flex-grow: 1;
-}
-
-.service__card a {
 }
 
 .service-benefits {

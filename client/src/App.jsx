@@ -6,6 +6,7 @@ import {
   ServerError,
   InitialTransition,
   Loader,
+  SocialMediaContainer,
   Transition,
 } from "./components";
 import { useSanity } from "./hooks/useSanity";
@@ -15,6 +16,7 @@ const Home = lazy(() => import("./containers/home/Home"));
 const CourseDetail = lazy(() =>
   import("./containers/courses/course-details/CourseDetails")
 );
+const WorkPlanPage = lazy(() => import("./containers/work-plan/index"));
 const ServiceDetail = lazy(() =>
   import("./containers/services/service-details/ServiceDetails")
 );
@@ -23,8 +25,9 @@ import "./lib/helpers";
 
 const routes = [
   { path: "/", element: <Home /> },
-  { path: "/cursos/:id", element: <CourseDetail /> },
-  { path: "/servicios/:id", element: <ServiceDetail /> },
+  { path: "/cursos/:slug", element: <CourseDetail /> },
+  { path: "/planes-de-trabajo/:slug", element: <WorkPlanPage /> },
+  { path: "/servicios/:slug", element: <ServiceDetail /> },
   { path: "*", element: <NotFound /> },
 ];
 
@@ -44,9 +47,10 @@ function App() {
           ) : (
             <>
               <Menu />
+              <SocialMediaContainer />
               <main className="body-container">
                 <AnimatePresence mode="wait">
-                  <motion.div key={location.pathname} className="h-full">
+                  <motion.div key={location.pathname} className="h-full]">
                     <Transition />
                     <Routes location={location} key={location.pathname}>
                       {routes.map((route, index) => (

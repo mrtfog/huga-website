@@ -16,6 +16,8 @@ const colorClasses = {
   lightGray: "text-[#e5e5e5]",
   darkGray: "text-[#363738]",
   brown: "text-[#813816]",
+  violet: "text-[#650666]",
+  lightViolet: "text-[#731b74]",
 };
 
 const Typography = ({

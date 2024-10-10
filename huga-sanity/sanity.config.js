@@ -30,6 +30,12 @@ export default defineConfig({
               context,
             }),
             orderableDocumentListDeskItem({
+              type: 'workPlan',
+              title: '⚙️ Planes de Trabajo',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
               type: 'portfolio',
               title: '⚙️ Portafolio',
               S,

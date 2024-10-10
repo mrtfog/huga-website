@@ -1,4 +1,11 @@
-import { Projects, Courses, Services, Header, Contact } from "../../components";
+import {
+  Projects,
+  Courses,
+  Services,
+  WorkPlan,
+  Header,
+  Contact,
+} from "../../components";
 import { Fragment, useEffect } from "react";
 import { useSanity } from "../../hooks/useSanity";
 import { Helmet } from "react-helmet";
@@ -45,6 +52,9 @@ const Home = () => {
               )}
               {section.type === "services" && (
                 <Services sectionData={section} />
+              )}
+              {section.type === "work-plan" && (
+                <WorkPlan sectionData={section} />
               )}
               {section.type === "contact" && <Contact sectionData={section} />}
             </Fragment>

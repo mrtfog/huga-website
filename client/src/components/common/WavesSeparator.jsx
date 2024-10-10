@@ -5,7 +5,7 @@ const WavesSeparator = ({ color = "#d3c6d3", className = "" }) => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1440 320"
-      className={`absolute top-0 lg:-top-24 left-0 z-0 pointer-events-none ${className}`}
+      className={`absolute top-0 left-0 z-0 pointer-events-none ${className}`}
     >
       <path
         fill={color}

@@ -1,10 +1,5 @@
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
-const FIGURINES = 'figurines'
-const ESTAMPAS = 'estampas'
-const ILUSTRACIONES = 'ilustraciones'
-const FICHASTECNICAS = 'fichas-tecnicas'
-
 const months = [
   'Enero',
   'Febrero',
@@ -27,14 +22,6 @@ export default {
   orderings: [orderRankOrdering],
   fields: [
     orderRankField({type: 'portfolio'}),
-    {
-      name: 'type',
-      title: 'Tipo',
-      type: 'string',
-      options: {
-        list: [FIGURINES, ESTAMPAS, ILUSTRACIONES, FICHASTECNICAS],
-      },
-    },
     {
       name: 'title',
       title: 'Título',

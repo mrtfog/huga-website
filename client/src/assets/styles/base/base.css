@@ -1,8 +1,8 @@
 @import url("../abstracts/variables.css");
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   font-family: "Poppins", sans-serif;

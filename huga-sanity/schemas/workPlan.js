@@ -2,12 +2,12 @@ import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list
 import slugify from 'slugify'
 
 export default {
-  name: 'services',
-  title: 'Servicios',
+  name: 'workPlan',
+  title: 'Planes de trabajo',
   type: 'document',
   orderings: [orderRankOrdering],
   fields: [
-    orderRankField({type: 'services'}),
+    orderRankField({type: 'workPlan'}),
     {
       name: 'available',
       title: 'Disponible',
@@ -37,8 +37,8 @@ export default {
       type: 'image',
     },
     {
-      name: 'serviceIntroducingVideo',
-      title: 'Video de Introducción del Servicio',
+      name: 'video',
+      title: 'Video de Introducción del Plan de trabajo',
       description: 'Recomendación: Peso inferior a 50MB y formato .webm/.mp4',
       type: 'file',
       options: {
@@ -51,41 +51,49 @@ export default {
       type: 'string',
     },
     {
+      name: 'shortDescription',
+      title: 'Descripción corta',
+      type: 'text',
+    },
+    {
       name: 'description',
       title: 'Descripción',
       type: 'text',
     },
     {
-      name: 'benefits',
-      title: 'Beneficios',
+      name: 'objectivePublic',
+      title: 'Publico Objetivo',
+      type: 'text',
+    },
+    {
+      name: 'objective',
+      title: 'Objetivo',
+      type: 'text',
+    },
+    {
+      name: 'workModality',
+      title: 'Modalidad de trabajo',
+      type: 'text',
+    },
+    {
+      name: 'paymentModality',
+      title: 'Modalidad de pago',
+      type: 'text',
+    },
+    {
       type: 'array',
+      name: 'includedServices',
+      title: 'Servicios incluídos',
       of: [
         {
-          type: 'object',
-          fields: [
-            {
-              name: 'title',
-              title: 'Título',
-              type: 'string',
-            },
-            {
-              name: 'description',
-              title: 'Descripción',
-              type: 'text',
-            },
-          ],
-          preview: {
-            select: {
-              title: 'title',
-              subtitle: 'description',
-            },
-          },
+          type: 'reference',
+          to: [{type: 'services'}],
         },
       ],
     },
     {
-      name: 'modules',
-      title: 'Módulos',
+      name: 'workPlan',
+      title: 'Plan de trabajo',
       type: 'array',
       of: [
         {
