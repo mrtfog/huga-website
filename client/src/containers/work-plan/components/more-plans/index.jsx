@@ -6,7 +6,6 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { Typography } from "../../../../components";
 
 const MorePlans = ({ plans }) => {
-  console.log(plans);
   return (
     <section className="px-5 lg:px-20 py-20">
       <div className="mb-10">

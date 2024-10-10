@@ -21,6 +21,7 @@ const WorkPlanPage = () => {
     const currentPlanQuery = `*[_type == "workPlan" && slug.current == $slug][0]{
       ...,
       "image": image.asset->url,
+      "video": video.asset->url,
     }`;
 
     const otherPlansQuery = `*[_type == "workPlan" && slug.current != $slug]{

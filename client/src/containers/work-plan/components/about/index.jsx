@@ -5,7 +5,7 @@ const About = ({ plan }) => {
   return (
     <section className="h-max z-10 px-5 lg:px-20 py-20 flex flex-col gap-20">
       <div>
-        <Typography as="h2" variant="h1" color="black">
+        <Typography as="h2" variant="h1" color="violet">
           Acerca de "{plan?.title}"
         </Typography>
         <Typography as="p" variant="medium" color="darkGray" className="mt-3">

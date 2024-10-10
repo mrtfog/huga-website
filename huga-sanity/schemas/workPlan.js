@@ -37,6 +37,15 @@ export default {
       type: 'image',
     },
     {
+      name: 'video',
+      title: 'Video de Introducción del Plan de trabajo',
+      description: 'Recomendación: Peso inferior a 50MB y formato .webm/.mp4',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+    },
+    {
       name: 'title',
       title: 'Título',
       type: 'string',
