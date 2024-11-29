@@ -5,6 +5,7 @@ import {
   WorkPlan,
   Header,
   Contact,
+  Blog,
 } from "../../components";
 import { Fragment, useEffect } from "react";
 import { useSanity } from "../../hooks/useSanity";
@@ -56,6 +57,7 @@ const Home = () => {
               {section.type === "work-plan" && (
                 <WorkPlan sectionData={section} />
               )}
+              {section.type === "blog" && <Blog sectionData={section} />}
               {section.type === "contact" && <Contact sectionData={section} />}
             </Fragment>
           ))
