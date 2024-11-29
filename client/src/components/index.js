@@ -17,3 +17,4 @@ export { default as Projects } from "./home/Projects.jsx";
 export { default as Services } from "./home/Services.jsx";
 export { default as Header } from "./home/Header.jsx";
 export { default as WorkPlan } from "./home/WorkPlan.jsx";
+export { default as Blog } from "./home/Blog.jsx";

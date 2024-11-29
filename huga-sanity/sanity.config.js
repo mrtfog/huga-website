@@ -24,8 +24,20 @@ export default defineConfig({
               context,
             }),
             orderableDocumentListDeskItem({
+              type: 'blog',
+              title: '📄 Blog',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
               type: 'socialMedia',
               title: '⚙️ Redes Sociales',
+              S,
+              context,
+            }),
+            orderableDocumentListDeskItem({
+              type: 'blogCategories',
+              title: '⚙️ Categorías de Blog',
               S,
               context,
             }),

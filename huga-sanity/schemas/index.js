@@ -4,5 +4,16 @@ import services from './services'
 import courses from './courses'
 import portfolio from './portfolio'
 import workPlan from './workPlan'
+import blog from './blog'
+import blogCategories from './blog-categories'
 
-export const schemaTypes = [socialMedia, home, services, courses, portfolio, workPlan]
+export const schemaTypes = [
+  home,
+  services,
+  courses,
+  portfolio,
+  blog,
+  workPlan,
+  blogCategories,
+  socialMedia,
+]

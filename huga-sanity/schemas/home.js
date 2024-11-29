@@ -4,6 +4,7 @@ import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list
 const HERO = 'hero'
 const ABOUT = 'about'
 const PORTFOLIO = 'portfolio'
+const BLOG = 'blog'
 const COURSES = 'courses'
 const SERVICES = 'services'
 const CONTACT = 'contact'
@@ -21,7 +22,7 @@ export default {
       title: 'Type',
       type: 'string',
       options: {
-        list: [HERO, ABOUT, PORTFOLIO, CONTACT, SERVICES, COURSES, WORKPLAN],
+        list: [HERO, ABOUT, PORTFOLIO, CONTACT, SERVICES, COURSES, WORKPLAN, BLOG],
       },
     },
     {
@@ -44,6 +45,21 @@ export default {
         limit: 6,
       },
       hidden: ({document}) => document.type !== COURSES,
+    },
+    {
+      name: 'blogs',
+      title: 'Blogs Destacados',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'blog'}],
+        },
+      ],
+      options: {
+        limit: 6,
+      },
+      hidden: ({document}) => document.type !== BLOG,
     },
     {
       name: 'services',
