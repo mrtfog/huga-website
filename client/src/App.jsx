@@ -1,35 +1,29 @@
-import { lazy } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { lazy, Suspense } from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import "./App.css";
 import {
-  Menu,
-  NotFound,
   Footer,
-  ServerError,
   InitialTransition,
   Loader,
+  Menu,
+  NotFound,
+  ServerError,
   SocialMediaContainer,
   Transition,
 } from "./components";
 import { useSanity } from "./hooks/useSanity";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import "./lib/helpers";
+
 const Home = lazy(() => import("./containers/home/Home"));
 const CourseDetail = lazy(() =>
   import("./containers/courses/course-details/CourseDetails")
 );
+const BlogDetailsPage = lazy(() => import("./containers/blog/blog-page/index"));
 const WorkPlanPage = lazy(() => import("./containers/work-plan/index"));
 const ServiceDetail = lazy(() =>
   import("./containers/services/service-details/ServiceDetails")
 );
-import "./App.css";
-import "./lib/helpers";
-
-const routes = [
-  { path: "/", element: <Home /> },
-  { path: "/cursos/:slug", element: <CourseDetail /> },
-  { path: "/planes-de-trabajo/:slug", element: <WorkPlanPage /> },
-  { path: "/servicios/:slug", element: <ServiceDetail /> },
-  { path: "*", element: <NotFound /> },
-];
 
 function App() {
   const { isLoading, fetchError } = useSanity();
@@ -52,15 +46,28 @@ function App() {
                 <AnimatePresence mode="wait">
                   <motion.div key={location.pathname} className="h-full]">
                     <Transition />
-                    <Routes location={location} key={location.pathname}>
-                      {routes.map((route, index) => (
+                    <Suspense fallback={<Loader />}>
+                      <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={<Home />} />
                         <Route
-                          key={index}
-                          path={route.path}
-                          element={route.element}
+                          path="/cursos/:slug"
+                          element={<CourseDetail />}
                         />
-                      ))}
-                    </Routes>
+                        <Route
+                          path="/planes-de-trabajo/:slug"
+                          element={<WorkPlanPage />}
+                        />
+                        <Route
+                          path="/servicios/:slug"
+                          element={<ServiceDetail />}
+                        />
+                        <Route
+                          path="/blog/:slug"
+                          element={<BlogDetailsPage />}
+                        />
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    </Suspense>
                   </motion.div>
                 </AnimatePresence>
               </main>

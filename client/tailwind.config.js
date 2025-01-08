@@ -9,7 +9,8 @@ export default {
         md: { min: "768px" },
         lg: { min: "992px" },
         xl: { min: "1200px" },
-        xxl: { min: "1920px" },
+        "2xl": { min: "1440px" },
+        "3xl": { min: "1920px" },
       },
       colors: {
         "main-bg": "#d3c6d3",

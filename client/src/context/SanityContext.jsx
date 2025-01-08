@@ -62,6 +62,22 @@ export const SanityProvider = ({ children }) => {
         "portfolio": portfolio[]->{
           ...,
           "image": image.asset->url
+        },
+        "blogs": blogs[]->{
+          _id,
+          title,
+          excerpt,
+          slug,
+          "authorImage": authorImage.asset->url,
+          "featuredImage": featuredImage.asset->url,
+          "category": category->{
+            title,
+            slug
+          },
+          "seo": seo{
+            ...,
+            "openGraphImage": openGraphImage.asset->url
+          }
         }
       } | order(orderRank)`;
       const result = await client.fetch(query);

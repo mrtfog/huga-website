@@ -13,16 +13,20 @@ const CardItem = ({ workPlan, workIdx }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       style={{ backgroundImage: `url(${workPlan?.image})` }}
-      className="w-full h-96 bg-black bg-center bg-cover bg-no-repeat rounded-3xl overflow-hidden p-5 overlay"
+      className="w-full h-96 2xl:h-[450px] bg-black bg-center bg-cover bg-no-repeat rounded-3xl overflow-hidden group border border-violet-color"
     >
       <Link
         to={`/planes-de-trabajo/${workPlan.slug.current}`}
         className="w-full h-full flex flex-col justify-end"
       >
-        <h3 className="text-white text-3xl font-bold z-10">{workPlan.title}</h3>
-        <p className="text-gray-100 text-lg z-10">
-          {workPlan.shortDescription}
-        </p>
+        <div className="group-hover:opacity-100 group-hover:bg-violet-color opacity-0 transition-all p-5">
+          <h3 className="text-white text-3xl font-bold z-10">
+            {workPlan.title}
+          </h3>
+          <p className="text-gray-100 text-lg z-10">
+            {workPlan.shortDescription}
+          </p>
+        </div>
       </Link>
     </motion.article>
   );
