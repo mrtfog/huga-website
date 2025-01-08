@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Hüga | Estudio de diseño de gráfico</title>
+        <title>Hüga | Estudio de diseño integral</title>
         <meta
           name="description"
           content="Estudio de diseño integral, enfocado en creación de marcas únicas. Servicios de diseño de indumentaria/gráfico, cursos, ilustraciones, branding, packaging."
@@ -30,17 +30,14 @@ const Home = () => {
           name="keywords"
           content="diseño de indumentaria, diseño gráfico, branding, identidad de marca, redes sociales, producto, ilustración, fotografía de moda, estampas, fichas técnicas, logotipos"
         />
-        <meta
-          property="og:title"
-          content="Hüga | Estudio de diseño de gráfico"
-        />
+        <meta property="og:title" content="Hüga | Estudio de diseño integral" />
         <meta
           property="og:description"
           content="Estudio de diseño integral, enfocado en creación de marcas únicas. Servicios de diseño de indumentaria/gráfico, cursos, ilustraciones, branding, packaging."
         />
         <meta
           property="og:site_name"
-          content="Hüga | Estudio de diseño de gráfico"
+          content="Hüga | Estudio de diseño integral"
         ></meta>
       </Helmet>
       {homeContent && homeContent.length
